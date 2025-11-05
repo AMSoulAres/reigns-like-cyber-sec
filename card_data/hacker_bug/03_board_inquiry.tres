@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://hackerbug03board"]
+
+[ext_resource type="Texture2D" uid="uid://bjxg7ra1fhsi1" path="res://assets/card_images/Hacker.png" id="1_portrait"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "hacker_bug_03_board_inquiry"
+character = "Hacker Etico"
+portrait = ExtResource("1_portrait")
+dialogue = "O conselho quer respostas sobre o vazamento. Eles exigem um plano drastico."
+questline_id = "hacker_bug"
+quest_step = 2
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Criar forca-tarefa e indenizar os clientes."
+choice_right_text = "Aceitar a culpa e renunciar ao cargo."
+effects_left = {
+"money": -15,
+"reputation": -5,
+"moral": -3
+}
+effects_right = {
+"moral": 6
+}
+game_over_right = true
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

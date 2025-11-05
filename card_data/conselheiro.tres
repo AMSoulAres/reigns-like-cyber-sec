@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c0qab3is6drux"]
+
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="1_h3jpb"]
+[ext_resource type="Texture2D" uid="uid://bmqhplh6rblhv" path="res://assets/card_images/Engineer.png" id="1_ultvn"]
+
+[resource]
+script = ExtResource("1_h3jpb")
+card_id = "conselheira1"
+character = "Especialista em Infra"
+portrait = ExtResource("1_ultvn")
+dialogue = "Alguns de nossos servidores estao desatualizados. Investimos agora na renovacao de licencas?"
+choice_left_text = "Nao da, vamos apertar mais um trimestre."
+choice_right_text = "Atualize tudo antes que vire incidente."
+effects_left = {
+"infra": -8,
+"moral": -5
+}
+effects_right = {
+"money": -12,
+"infra": 10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

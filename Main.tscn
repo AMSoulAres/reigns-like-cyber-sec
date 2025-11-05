@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv4fgo2cqqvw4"]
+
+[ext_resource type="PackedScene" uid="uid://sjjqiunoj0qe" path="res://scenes/UI.tscn" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://c2gstjbpcvabt" path="res://Main.gd" id="1_uu6xs"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uu6xs")
+
+[node name="CardSpawnPoint" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("1_glv2v")]

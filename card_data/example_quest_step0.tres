@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ci3example0"]
+
+[ext_resource type="Texture2D" uid="uid://bmqhplh6rblhv" path="res://assets/card_images/Engineer.png" id="1_portrait"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "example_quest_step0"
+character = "Personagem Exemplo"
+portrait = ExtResource("1_portrait")
+dialogue = "Use este cartao como ponto de partida para uma nova questline. Atualize ID, personagem e efeitos."
+questline_id = "example_thread"
+quest_step = 0
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Defina a consequencia da opcao esquerda."
+choice_right_text = "Defina a consequencia da opcao direita."
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

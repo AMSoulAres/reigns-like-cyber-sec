@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://sjjqiunoj0qe"]
+
+[ext_resource type="Texture2D" uid="uid://buqvdrrshwe12" path="res://assets/stats/Money_ICON.png" id="1_ua6yw"]
+[ext_resource type="Script" uid="uid://bsb5gvf82yant" path="res://scenes/UI.gd" id="2_3wlde"]
+[ext_resource type="Texture2D" uid="uid://b335w477c37dx" path="res://assets/stats/Moral Icon.png" id="2_75u2n"]
+[ext_resource type="Texture2D" uid="uid://d11wsb4rj2lcy" path="res://assets/stats/Infra_Icon.png" id="3_3wlde"]
+[ext_resource type="Texture2D" uid="uid://csx0ekb2k6lx2" path="res://assets/stats/Rep Icon.png" id="4_xpksx"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("2_3wlde")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 1.0
+offset_right = 409.0
+offset_bottom = 130.0
+
+[node name="MoneyVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MoneyBar" type="ProgressBar" parent="HBoxContainer/MoneyVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MoneyImg" type="TextureRect" parent="HBoxContainer/MoneyVBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ua6yw")
+
+[node name="MoralVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MoralBar" type="ProgressBar" parent="HBoxContainer/MoralVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MoralImg" type="TextureRect" parent="HBoxContainer/MoralVBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_75u2n")
+
+[node name="InfraVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="InfraBar" type="ProgressBar" parent="HBoxContainer/InfraVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="InfraImg" type="TextureRect" parent="HBoxContainer/InfraVBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_3wlde")
+
+[node name="RepVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="RepBar" type="ProgressBar" parent="HBoxContainer/RepVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RepImg" type="TextureRect" parent="HBoxContainer/RepVBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_xpksx")
