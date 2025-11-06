@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://techbreach03audit"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bnnqr7mwnsc8f"]
 
-[ext_resource type="Texture2D" uid="uid://borrwiycy5sk3" path="res://assets/card_images/Tech_Guy.png" id="1_portrait"]
+[ext_resource type="Texture2D" uid="uid://bjk6e3mkhfvai" path="res://assets/card_images/DepartmentChief.png" id="1_foivh"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_03_audit"
 character = "Dev Pleno"
-portrait = ExtResource("1_portrait")
+portrait = ExtResource("1_foivh")
 dialogue = "O relatorio de phishing trouxe uma lista de 50 acoes. Um auditor externo quer prioridade maxima."
 questline_id = "tech_breach"
 quest_step = 2
@@ -16,8 +16,8 @@ reshuffle_after_use = false
 choice_left_text = "Liberar orcamento e cumprir todas as acoes."
 choice_right_text = "Faca so o minimo para apresentar ao conselho."
 effects_left = {
-"money": -14,
 "infra": 8,
+"money": -14,
 "reputation": 4
 }
 effects_right = {

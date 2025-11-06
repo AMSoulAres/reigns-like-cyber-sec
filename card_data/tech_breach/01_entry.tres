@@ -1,29 +1,27 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://techbreach01"]
 
-[ext_resource type="Texture2D" uid="uid://borrwiycy5sk3" path="res://assets/card_images/Tech_Guy.png" id="1_portrait"]
+[ext_resource type="Texture2D" uid="uid://6a6lik2q7cgp" path="res://assets/card_images/DataAnalyst.png" id="1_by6fw"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_01_entry"
 character = "Dev Pleno"
-portrait = ExtResource("1_portrait")
+portrait = ExtResource("1_by6fw")
 dialogue = "Chefe, meu usuario foi comprometido e dezenas de clientes tiveram dados expostos..."
 questline_id = "tech_breach"
-quest_step = 0
-available_from_start = true
 reshuffle_after_use = false
-choice_left_text = "Informe todo mundo e revise o treinamento da equipe."
-choice_right_text = "Voce caiu em phishing? Vamos encobrir isso."
+choice_left_text = "Tranquilize o público e realize o treinamento de segurança da equipe."
+choice_right_text = "Voce caiu em phishing? Inacreditável. Vamos encobrir isso."
 effects_left = {
-"reputation": -6,
 "infra": 6,
-"moral": 6
+"moral": 6,
+"reputation": -6
 }
 effects_right = {
 "infra": -6,
-"reputation": -8,
-"moral": -6
+"moral": -6,
+"reputation": -8
 }
 next_card_id_left = "tech_breach_02_training"
 next_card_delay_left = 1

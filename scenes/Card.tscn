@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://l8c4vk1emene"]
+[gd_scene load_steps=9 format=3 uid="uid://l8c4vk1emene"]
 
 [ext_resource type="Script" uid="uid://lqj5333xy445" path="res://scenes/Card.gd" id="1_yiag5"]
 [ext_resource type="Texture2D" uid="uid://bosefamxgquny" path="res://assets/Template Principal.png" id="2_template"]
 [ext_resource type="Texture2D" uid="uid://buqvdrrshwe12" path="res://assets/stats/Money_ICON.png" id="3_money"]
+[ext_resource type="Texture2D" uid="uid://b8uoxwq46ywux" path="res://assets/card_images/PoliceDog.png" id="3_qbjcq"]
+[ext_resource type="FontFile" uid="uid://cn8mt6w1q3se3" path="res://assets/FiraCode-VariableFont_wght.ttf" id="4_dqwud"]
 [ext_resource type="Texture2D" uid="uid://b335w477c37dx" path="res://assets/stats/Moral Icon.png" id="4_moral"]
 [ext_resource type="Texture2D" uid="uid://d11wsb4rj2lcy" path="res://assets/stats/Infra_Icon.png" id="5_infra"]
 [ext_resource type="Texture2D" uid="uid://csx0ekb2k6lx2" path="res://assets/stats/Rep Icon.png" id="6_rep"]
@@ -12,8 +14,8 @@ script = ExtResource("1_yiag5")
 
 [node name="Template" type="TextureRect" parent="."]
 unique_name_in_owner = true
-offset_right = 450.0
-offset_bottom = 650.0
+offset_right = 541.0
+offset_bottom = 843.0
 texture = ExtResource("2_template")
 
 [node name="Portrait" type="TextureRect" parent="Template"]
@@ -30,8 +32,30 @@ offset_right = 186.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_qbjcq")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="CharacterLabel" type="Label" parent="Template"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.5
+offset_top = 168.5
+offset_right = 235.5
+offset_bottom = 243.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_dqwud")
+theme_override_font_sizes/font_size = 24
+text = "Cachorrinho
+"
+autowrap_mode = 3
 
 [node name="DialogueLabel" type="Label" parent="Template"]
 unique_name_in_owner = true
@@ -41,30 +65,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -195.0
-offset_top = 180.0
-offset_right = 195.0
-offset_bottom = 230.0
+offset_left = -206.5
+offset_top = 242.5
+offset_right = 211.5
+offset_bottom = 317.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Texto do diálogo vem aqui..."
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.5882353, 0, 1)
+theme_override_fonts/font = ExtResource("4_dqwud")
+theme_override_font_sizes/font_size = 18
+text = "Template de texto de díalogo. Exemplo bem grandão pro texto ficar maior e saber como vai ficar. Acho que assim ta bom"
 autowrap_mode = 3
 
 [node name="ChoiceLeftContainer" type="VBoxContainer" parent="Template"]
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
-offset_left = 32.0
-offset_top = 456.0
-offset_right = 222.0
-offset_bottom = 616.0
+offset_left = 122.0
+offset_top = 445.0
+offset_right = 429.0
+offset_bottom = 605.0
 theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Label" type="Label" parent="Template/ChoiceLeftContainer"]
 layout_mode = 2
-text = "Esq"
+theme_override_fonts/font = ExtResource("4_dqwud")
+text = "Texto de escolha esquerda vem aqui... 64 Caracteres max"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -74,25 +102,25 @@ theme_override_constants/separation = 12
 alignment = 1
 
 [node name="Money" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("3_money")
 expand_mode = 1
 
 [node name="Moral" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("4_moral")
 expand_mode = 1
 
 [node name="Infra" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("5_infra")
 expand_mode = 1
 
 [node name="Reputation" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("6_rep")
 expand_mode = 1
@@ -101,16 +129,18 @@ expand_mode = 1
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
-offset_left = 228.0
-offset_top = 456.0
-offset_right = 418.0
-offset_bottom = 616.0
+offset_left = 122.0
+offset_top = 445.0
+offset_right = 429.0
+offset_bottom = 605.0
 theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Label" type="Label" parent="Template/ChoiceRightContainer"]
 layout_mode = 2
-text = "Dir"
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.3647059)
+theme_override_fonts/font = ExtResource("4_dqwud")
+text = "Texto de escolha direita vem aqui... 64 Caracteres max"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -120,25 +150,25 @@ theme_override_constants/separation = 12
 alignment = 1
 
 [node name="Money" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("3_money")
 expand_mode = 1
 
 [node name="Moral" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("4_moral")
 expand_mode = 1
 
 [node name="Infra" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("5_infra")
 expand_mode = 1
 
 [node name="Reputation" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("6_rep")
 expand_mode = 1

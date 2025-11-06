@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c0qab3is6drux"]
 
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="1_h3jpb"]
-[ext_resource type="Texture2D" uid="uid://bmqhplh6rblhv" path="res://assets/card_images/Engineer.png" id="1_ultvn"]
+[ext_resource type="Texture2D" uid="uid://dg515llyn5pk5" path="res://assets/card_images/TechGirl.png" id="1_ultvn"]
 
 [resource]
 script = ExtResource("1_h3jpb")
@@ -16,7 +16,7 @@ effects_left = {
 "moral": -5
 }
 effects_right = {
-"money": -12,
-"infra": 10
+"infra": 10,
+"money": -12
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

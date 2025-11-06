@@ -25,8 +25,10 @@ class_name CardData
 @export var next_card_id_left: String = ""
 @export_range(0, 10, 1, "or_greater") var next_card_delay_left: int = 0
 @export var game_over_left: bool = false
+@export var game_over_left_reason: String = ""
 
 @export_group("Choice Right Flow")
 @export var next_card_id_right: String = ""
 @export_range(0, 10, 1, "or_greater") var next_card_delay_right: int = 0
 @export var game_over_right: bool = false
+@export var game_over_right_reason: String = ""

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://techbreach02cover"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bnnqr7mvpmu4d"]
 
-[ext_resource type="Texture2D" uid="uid://borrwiycy5sk3" path="res://assets/card_images/Tech_Guy.png" id="1_portrait"]
+[ext_resource type="Texture2D" uid="uid://6a6lik2q7cgp" path="res://assets/card_images/DataAnalyst.png" id="1_tcn1n"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_02_coverup"
 character = "Dev Pleno"
-portrait = ExtResource("1_portrait")
+portrait = ExtResource("1_tcn1n")
 dialogue = "A auditoria interna descobriu que escondemos o incidente. Ainda da para controlar a narrativa?"
 questline_id = "tech_breach"
 quest_step = 1
@@ -16,8 +16,8 @@ reshuffle_after_use = false
 choice_left_text = "Confesse antes que vazem prints."
 choice_right_text = "Apague os logs e jure que nunca aconteceu."
 effects_left = {
-"reputation": -12,
-"moral": -4
+"moral": -4,
+"reputation": -12
 }
 effects_right = {
 "infra": -8,

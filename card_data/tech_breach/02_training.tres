@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://techbreach02training"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://be4ej1h81oaay"]
 
-[ext_resource type="Texture2D" uid="uid://borrwiycy5sk3" path="res://assets/card_images/Tech_Guy.png" id="1_portrait"]
+[ext_resource type="Texture2D" uid="uid://6a6lik2q7cgp" path="res://assets/card_images/DataAnalyst.png" id="1_fi2vd"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_02_training"
 character = "Dev Pleno"
-portrait = ExtResource("1_portrait")
+portrait = ExtResource("1_fi2vd")
 dialogue = "A equipe esta esperando o novo treinamento anti-phishing. Como vamos conduzir isso?"
 questline_id = "tech_breach"
 quest_step = 1
@@ -16,8 +16,8 @@ reshuffle_after_use = false
 choice_left_text = "Contrate especialistas e faca simulacoes reais."
 choice_right_text = "Eu monto um workshop rapido interno."
 effects_left = {
-"money": -12,
 "infra": 5,
+"money": -12,
 "moral": 5
 }
 effects_right = {

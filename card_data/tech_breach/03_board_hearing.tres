@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://techbreach03board"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bnnqr7mwomahx"]
 
-[ext_resource type="Texture2D" uid="uid://borrwiycy5sk3" path="res://assets/card_images/Tech_Guy.png" id="1_portrait"]
+[ext_resource type="Texture2D" uid="uid://bjk6e3mkhfvai" path="res://assets/card_images/DepartmentChief.png" id="1_pfkt1"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_03_board_hearing"
 character = "Dev Pleno"
-portrait = ExtResource("1_portrait")
+portrait = ExtResource("1_pfkt1")
 dialogue = "O conselho abriu uma audiencia. Eles querem saber por que ninguem foi avisado do incidente."
 questline_id = "tech_breach"
 quest_step = 3
@@ -16,8 +16,8 @@ reshuffle_after_use = false
 choice_left_text = "Confesse tudo e proponha um plano transparente."
 choice_right_text = "Minta sob juramento, ninguem precisa saber."
 effects_left = {
-"reputation": -5,
-"moral": 4
+"moral": 4,
+"reputation": -5
 }
 effects_right = {
 "reputation": -20

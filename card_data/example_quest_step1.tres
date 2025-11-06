@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ci3example1"]
 
-[ext_resource type="Texture2D" uid="uid://bmqhplh6rblhv" path="res://assets/card_images/Engineer.png" id="1_portrait"]
+[ext_resource type="Texture2D" uid="uid://b8uoxwq46ywux" path="res://assets/card_images/PoliceDog.png" id="1_3g0yr"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "example_quest_step1"
 character = "Personagem Exemplo"
-portrait = ExtResource("1_portrait")
+portrait = ExtResource("1_3g0yr")
 dialogue = "Este e um passo intermediario. Ajuste delays e proximos cartoes conforme necessario."
 questline_id = "example_thread"
 quest_step = 1

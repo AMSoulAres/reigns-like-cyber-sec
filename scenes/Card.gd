@@ -6,6 +6,7 @@ signal card_resolved(card_data, choice: String)
 # Referências aos nós principais
 @onready var template: TextureRect = %Template
 @onready var portrait: TextureRect = %Portrait
+@onready var character: Label = %CharacterLabel
 @onready var dialogue_label: Label = %DialogueLabel
 @onready var choice_left_container: Control = %ChoiceLeftContainer
 @onready var choice_right_container: Control = %ChoiceRightContainer
@@ -30,7 +31,8 @@ func setup_card(data):
 	dialogue_label.text = data.dialogue
 	choice_left_label.text = data.choice_left_text
 	choice_right_label.text = data.choice_right_text
-	
+	character.text = data.character
+
 	# Garante que os containers de escolha comecem invisíveis.
 	choice_left_container.modulate.a = 0
 	choice_right_container.modulate.a = 0
