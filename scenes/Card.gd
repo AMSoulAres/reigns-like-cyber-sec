@@ -6,6 +6,7 @@ signal card_resolved(card_data, choice: String)
 # Referências aos nós principais
 @onready var template: TextureRect = %Template
 @onready var portrait: TextureRect = %Portrait
+@onready var down_card: TextureRect = %DownCardPortrait
 @onready var character: Label = %CharacterLabel
 @onready var dialogue_label: Label = %DialogueLabel
 @onready var choice_left_container: Control = %ChoiceLeftContainer
@@ -25,12 +26,16 @@ var reset_tween: Tween
 var entry_tween: Tween
 var base_portrait_scale = Vector2.ONE
 var base_portrait_color = Color.WHITE
+var base_downcard_pos = Vector2.ZERO
+var base_downcard_scale = Vector2.ONE
+var base_downcard_color = Color.WHITE
 
 # Função pública para configurar o cartão com dados específicos.
 func setup_card(data):
 	self.card_data = data
 	
 	# Atualiza os elementos visuais com base nos dados recebidos[cite: 25].
+	_cache_visual_baseline()
 	portrait.texture = data.portrait
 	_center_portrait_pivot()
 	dialogue_label.text = data.dialogue
@@ -76,9 +81,7 @@ var initial_mouse_pos = Vector2.ZERO
 var swipe_threshold = BASE_SWIPE_THRESHOLD
 
 func _ready():
-	initial_portrait_pos = portrait.position
-	base_portrait_scale = portrait.scale
-	base_portrait_color = portrait.modulate
+	_cache_visual_baseline()
 	_center_portrait_pivot()
 	_cache_template_size()
 	_update_swipe_threshold()
@@ -96,6 +99,14 @@ func _cache_template_size():
 	if base_template_size == Vector2.ZERO:
 		base_template_size = template.size
 
+func _cache_visual_baseline():
+	initial_portrait_pos = portrait.position
+	base_portrait_scale = portrait.scale
+	base_portrait_color = portrait.modulate
+	base_downcard_pos = down_card.position
+	base_downcard_scale = down_card.scale
+	base_downcard_color = down_card.modulate
+
 func update_layout(viewport_size: Vector2):
 	if base_template_size == Vector2.ZERO:
 		_cache_template_size()
@@ -108,6 +119,12 @@ func update_layout(viewport_size: Vector2):
 	entry_tween = null
 	portrait.scale = base_portrait_scale
 	portrait.modulate = base_portrait_color
+	down_card.position = base_downcard_pos
+	down_card.scale = base_downcard_scale
+	down_card.modulate = base_downcard_color
+	down_card.position = base_downcard_pos
+	down_card.scale = base_downcard_scale
+	down_card.modulate = base_downcard_color
 	_update_swipe_threshold()
 
 func get_scaled_size() -> Vector2:
@@ -192,8 +209,12 @@ func _reset_card_visuals(animate: bool = true):
 		portrait.rotation = 0
 		portrait.modulate = base_portrait_color
 		portrait.scale = base_portrait_scale
+		down_card.position = base_downcard_pos
+		down_card.scale = base_downcard_scale
+		down_card.modulate = base_downcard_color
 		choice_left_container.modulate = left_target
 		choice_right_container.modulate = right_target
+		_cache_visual_baseline()
 		return
 
 	reset_tween = create_tween()
@@ -209,8 +230,12 @@ func _reset_card_visuals(animate: bool = true):
 			portrait.rotation = 0
 			portrait.modulate = base_portrait_color
 			portrait.scale = base_portrait_scale
+			down_card.position = base_downcard_pos
+			down_card.scale = base_downcard_scale
+			down_card.modulate = base_downcard_color
 			choice_left_container.modulate = left_target
 			choice_right_container.modulate = right_target
+			_cache_visual_baseline()
 			reset_tween = null
 		)
 
@@ -220,16 +245,38 @@ func play_draw_animation():
 	entry_tween = null
 	portrait.scale = base_portrait_scale
 	portrait.modulate = base_portrait_color
+	portrait.rotation = 0
+	portrait.position = initial_portrait_pos
+	down_card.position = base_downcard_pos
+	down_card.scale = base_downcard_scale
+	down_card.modulate = base_downcard_color
 	portrait.scale = Vector2(base_portrait_scale.x * 0.05, base_portrait_scale.y)
 	portrait.modulate.a = 0.0
+	portrait.position = initial_portrait_pos + Vector2(0, -20)
 	entry_tween = create_tween()
 	entry_tween.set_trans(Tween.TRANS_SINE)
 	entry_tween.set_ease(Tween.EASE_OUT)
-	entry_tween.tween_property(portrait, "scale", base_portrait_scale, 0.18)
-	entry_tween.parallel().tween_property(portrait, "modulate:a", base_portrait_color.a, 0.18)
+	var deck_track = entry_tween.parallel()
+	deck_track.tween_property(down_card, "position", base_downcard_pos + Vector2(0, 18), 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	deck_track.tween_property(down_card, "position", base_downcard_pos, 0.12).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	var deck_scale_track = entry_tween.parallel()
+	deck_scale_track.tween_property(down_card, "scale", base_downcard_scale * Vector2(1.0, 0.97), 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	deck_scale_track.tween_property(down_card, "scale", base_downcard_scale, 0.12).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	var deck_alpha_track = entry_tween.parallel()
+	deck_alpha_track.tween_property(down_card, "modulate:a", base_downcard_color.a * 0.7, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	deck_alpha_track.tween_property(down_card, "modulate:a", base_downcard_color.a, 0.12).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	var portrait_track = entry_tween.parallel()
+	portrait_track.tween_property(portrait, "scale", base_portrait_scale, 0.18).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	portrait_track.parallel().tween_property(portrait, "modulate:a", base_portrait_color.a, 0.18)
+	portrait_track.parallel().tween_property(portrait, "position", initial_portrait_pos, 0.18).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	entry_tween.finished.connect(func():
 		if entry_tween:
 			portrait.scale = base_portrait_scale
 			portrait.modulate = base_portrait_color
+			portrait.position = initial_portrait_pos
+			down_card.position = base_downcard_pos
+			down_card.scale = base_downcard_scale
+			down_card.modulate = base_downcard_color
+			_cache_visual_baseline()
 			entry_tween = null
 	)
