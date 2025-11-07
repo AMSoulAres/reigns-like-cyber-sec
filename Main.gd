@@ -3,6 +3,8 @@ extends Node
 
 const CardScene = preload("res://scenes/Card.tscn")
 
+@onready var background: Sprite2D = $Background
+@onready var card_container: Node2D = $CardContainer
 @onready var card_spawn_point = $CardSpawnPoint
 
 var card_lookup: Dictionary = {}
@@ -11,11 +13,17 @@ var discard_pile: Array = []
 var pending_cards: Array = []
 var questline_state: Dictionary = {}
 var game_has_ended = false
+var current_viewport_size: Vector2 = Vector2.ZERO
 
 func _ready():
 	GameState.game_over.connect(_on_game_over)
+	get_viewport().size_changed.connect(_on_viewport_size_changed)
+	_update_layout()
 	load_deck("res://card_data/")
 	draw_next_card()
+
+func _on_viewport_size_changed():
+	_update_layout()
 
 func load_deck(path: String):
 	card_lookup.clear()
@@ -42,6 +50,7 @@ func _collect_cards(path: String):
 
 		var full_path = path.path_join(entry)
 		if dir.current_is_dir():
+			# Enter in subdirectory to find more cards (questlines, etc.)
 			_collect_cards(full_path)
 		elif entry.ends_with(".tres"):
 			var resource = load(full_path)
@@ -66,11 +75,45 @@ func draw_next_card():
 		return
 
 	var card_instance = CardScene.instantiate()
-	add_child(card_instance)
+	card_container.add_child(card_instance)
 	card_instance.position = card_spawn_point.position
 	card_instance.setup_card(next_card)
+	if current_viewport_size != Vector2.ZERO:
+		if card_instance.has_method("update_layout"):
+			card_instance.update_layout(current_viewport_size)
+	_position_card(card_instance)
+	if card_instance.has_method("play_draw_animation"):
+		card_instance.play_draw_animation()
 	card_instance.card_resolved.connect(_on_card_resolved)
 	card_instance.tree_exited.connect(draw_next_card)
+
+func _update_layout():
+	current_viewport_size = get_viewport().get_visible_rect().size
+	card_spawn_point.position = current_viewport_size * 0.5
+	_update_background()
+	for child in card_container.get_children():
+		if child.has_method("update_layout"):
+			child.update_layout(current_viewport_size)
+		_position_card(child)
+
+func _update_background():
+	if background == null or background.texture == null:
+		return
+	var tex_size = background.texture.get_size()
+	if tex_size == Vector2.ZERO:
+		return
+	var scale_factor = max(
+		current_viewport_size.x / tex_size.x,
+		current_viewport_size.y / tex_size.y
+	)
+	background.scale = Vector2.ONE * scale_factor
+	background.position = current_viewport_size * 0.5
+
+func _position_card(card):
+	var card_size = Vector2.ZERO
+	if card.has_method("get_scaled_size"):
+		card_size = card.get_scaled_size()
+	card.position = card_spawn_point.position - card_size * 0.5
 
 func _pick_next_card() -> CardData:
 	var pending_card = _consume_ready_pending_card()

@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv4fgo2cqqvw4"]
+[gd_scene load_steps=4 format=3 uid="uid://dv4fgo2cqqvw4"]
 
 [ext_resource type="PackedScene" uid="uid://sjjqiunoj0qe" path="res://scenes/UI.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://c2gstjbpcvabt" path="res://Main.gd" id="1_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://dntfa7ousqnju" path="res://assets/Background.png" id="3_b7knu"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uu6xs")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(947, 555)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_b7knu")
+
+[node name="CardContainer" type="Node2D" parent="."]
+
 [node name="CardSpawnPoint" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("1_glv2v")]
+offset = Vector2(636, 8)
+transform = Transform2D(1, 0, 0, 1, 636, 8)

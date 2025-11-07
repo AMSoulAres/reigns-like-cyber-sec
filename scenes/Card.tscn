@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://l8c4vk1emene"]
+[gd_scene load_steps=10 format=3 uid="uid://l8c4vk1emene"]
 
 [ext_resource type="Script" uid="uid://lqj5333xy445" path="res://scenes/Card.gd" id="1_yiag5"]
 [ext_resource type="Texture2D" uid="uid://bosefamxgquny" path="res://assets/Template Principal.png" id="2_template"]
+[ext_resource type="Texture2D" uid="uid://c6ie06dnm6awt" path="res://assets/DownCard.png" id="3_hddve"]
 [ext_resource type="Texture2D" uid="uid://buqvdrrshwe12" path="res://assets/stats/Money_ICON.png" id="3_money"]
 [ext_resource type="Texture2D" uid="uid://b8uoxwq46ywux" path="res://assets/card_images/PoliceDog.png" id="3_qbjcq"]
 [ext_resource type="FontFile" uid="uid://cn8mt6w1q3se3" path="res://assets/FiraCode-VariableFont_wght.ttf" id="4_dqwud"]
 [ext_resource type="Texture2D" uid="uid://b335w477c37dx" path="res://assets/stats/Moral Icon.png" id="4_moral"]
-[ext_resource type="Texture2D" uid="uid://d11wsb4rj2lcy" path="res://assets/stats/Infra_Icon.png" id="5_infra"]
 [ext_resource type="Texture2D" uid="uid://csx0ekb2k6lx2" path="res://assets/stats/Rep Icon.png" id="6_rep"]
+[ext_resource type="Texture2D" uid="uid://davr1u6ywu1l7" path="res://assets/stats/Integrity Icon.png" id="8_hddve"]
 
 [node name="Card" type="Node2D"]
 script = ExtResource("1_yiag5")
@@ -17,6 +18,23 @@ unique_name_in_owner = true
 offset_right = 541.0
 offset_bottom = 843.0
 texture = ExtResource("2_template")
+
+[node name="DownCardPortrait" type="TextureRect" parent="Template"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.5
+offset_top = -286.5
+offset_right = 149.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hddve")
+expand_mode = 1
 
 [node name="Portrait" type="TextureRect" parent="Template"]
 unique_name_in_owner = true
@@ -44,10 +62,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -182.5
-offset_top = 168.5
-offset_right = 235.5
-offset_bottom = 243.5
+offset_left = -205.5
+offset_top = 167.5
+offset_right = 212.5
+offset_bottom = 242.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
@@ -55,6 +73,7 @@ theme_override_fonts/font = ExtResource("4_dqwud")
 theme_override_font_sizes/font_size = 24
 text = "Cachorrinho
 "
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="DialogueLabel" type="Label" parent="Template"]
@@ -65,10 +84,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -206.5
-offset_top = 242.5
-offset_right = 211.5
-offset_bottom = 317.5
+offset_left = -198.5
+offset_top = 211.5
+offset_right = 219.5
+offset_bottom = 316.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
@@ -116,7 +135,7 @@ expand_mode = 1
 [node name="Infra" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("5_infra")
+texture = ExtResource("8_hddve")
 expand_mode = 1
 
 [node name="Reputation" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
@@ -164,7 +183,7 @@ expand_mode = 1
 [node name="Infra" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("5_infra")
+texture = ExtResource("8_hddve")
 expand_mode = 1
 
 [node name="Reputation" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
