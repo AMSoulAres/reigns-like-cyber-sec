@@ -17,5 +17,3 @@ texture = ExtResource("3_b7knu")
 [node name="CardSpawnPoint" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("1_glv2v")]
-offset = Vector2(636, 8)
-transform = Transform2D(1, 0, 0, 1, 636, 8)

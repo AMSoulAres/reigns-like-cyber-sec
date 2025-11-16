@@ -17,11 +17,11 @@ choice_left_text = "Feche o contrato de pentest trimestral."
 choice_right_text = "Foi um caso pontual, obrigado."
 effects_left = {
 "money": -12,
-"infra": 8,
+"sec": 8,
 "reputation": 5
 }
 effects_right = {
-"infra": 3
+"sec": 3
 }
 next_card_id_left = "hacker_bug_03_contract_review"
 next_card_delay_left = 3

@@ -20,7 +20,7 @@ effects_left = {
 "reputation": -12
 }
 effects_right = {
-"infra": -8,
+"sec": -8,
 "reputation": -18
 }
 next_card_id_left = "tech_breach_03_board_hearing"

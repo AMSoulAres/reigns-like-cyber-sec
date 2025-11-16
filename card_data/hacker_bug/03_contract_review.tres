@@ -17,11 +17,11 @@ choice_left_text = "Implemente todo o plano de seguranca."
 choice_right_text = "So faca o basico, o resto pode esperar."
 effects_left = {
 "money": -20,
-"infra": 12,
+"sec": 12,
 "moral": 4
 }
 effects_right = {
-"infra": -10,
+"sec": -10,
 "reputation": -12
 }
 game_over_right = true

@@ -16,12 +16,12 @@ reshuffle_after_use = false
 choice_left_text = "Liberar orcamento e cumprir todas as acoes."
 choice_right_text = "Faca so o minimo para apresentar ao conselho."
 effects_left = {
-"infra": 8,
+"sec": 8,
 "money": -14,
 "reputation": 4
 }
 effects_right = {
-"infra": -6,
+"sec": -6,
 "reputation": -6
 }
 next_card_id_right = "tech_breach_03_board_hearing"

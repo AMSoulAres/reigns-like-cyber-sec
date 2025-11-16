@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csx0ekb2k6lx2"
-path="res://.godot/imported/Rep Icon.png-3095f49d673fb27acc1ef943e03fa9ec.ctex"
+uid="uid://cbpseoaqb2glm"
+path="res://.godot/imported/MoneyIcon.png-faf51280cb6631b8ab141f87bd6be19c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stats/Rep Icon.png"
-dest_files=["res://.godot/imported/Rep Icon.png-3095f49d673fb27acc1ef943e03fa9ec.ctex"]
+source_file="res://assets/stats/MoneyIcon.png"
+dest_files=["res://.godot/imported/MoneyIcon.png-faf51280cb6631b8ab141f87bd6be19c.ctex"]
 
 [params]
 

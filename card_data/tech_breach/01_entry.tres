@@ -14,12 +14,12 @@ reshuffle_after_use = false
 choice_left_text = "Tranquilize o público e realize o treinamento de segurança da equipe."
 choice_right_text = "Voce caiu em phishing? Inacreditável. Vamos encobrir isso."
 effects_left = {
-"infra": 6,
+"sec": 6,
 "moral": 6,
 "reputation": -6
 }
 effects_right = {
-"infra": -6,
+"sec": -6,
 "moral": -6,
 "reputation": -8
 }

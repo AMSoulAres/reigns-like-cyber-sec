@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://l8c4vk1emene"]
 
 [ext_resource type="Script" uid="uid://lqj5333xy445" path="res://scenes/Card.gd" id="1_yiag5"]
-[ext_resource type="Texture2D" uid="uid://bosefamxgquny" path="res://assets/Template Principal.png" id="2_template"]
+[ext_resource type="Texture2D" uid="uid://blty5btx5kehl" path="res://assets/Template Principalv2.png" id="2_hddve"]
 [ext_resource type="Texture2D" uid="uid://c6ie06dnm6awt" path="res://assets/DownCard.png" id="3_hddve"]
-[ext_resource type="Texture2D" uid="uid://buqvdrrshwe12" path="res://assets/stats/Money_ICON.png" id="3_money"]
 [ext_resource type="Texture2D" uid="uid://b8uoxwq46ywux" path="res://assets/card_images/PoliceDog.png" id="3_qbjcq"]
 [ext_resource type="FontFile" uid="uid://cn8mt6w1q3se3" path="res://assets/FiraCode-VariableFont_wght.ttf" id="4_dqwud"]
-[ext_resource type="Texture2D" uid="uid://b335w477c37dx" path="res://assets/stats/Moral Icon.png" id="4_moral"]
-[ext_resource type="Texture2D" uid="uid://csx0ekb2k6lx2" path="res://assets/stats/Rep Icon.png" id="6_rep"]
-[ext_resource type="Texture2D" uid="uid://davr1u6ywu1l7" path="res://assets/stats/Integrity Icon.png" id="8_hddve"]
+[ext_resource type="Texture2D" uid="uid://cbpseoaqb2glm" path="res://assets/stats/MoneyIcon.png" id="6_hddve"]
+[ext_resource type="Texture2D" uid="uid://b4ct8ms1o7pbr" path="res://assets/stats/MoralIcon.png" id="7_hddve"]
+[ext_resource type="Texture2D" uid="uid://clxk5sn0wntu3" path="res://assets/stats/SecIcon.png" id="8_hddve"]
+[ext_resource type="Texture2D" uid="uid://dykfmrf80tq1u" path="res://assets/stats/RepIcon.png" id="9_hddve"]
 
 [node name="Card" type="Node2D"]
 script = ExtResource("1_yiag5")
@@ -17,7 +17,7 @@ script = ExtResource("1_yiag5")
 unique_name_in_owner = true
 offset_right = 541.0
 offset_bottom = 843.0
-texture = ExtResource("2_template")
+texture = ExtResource("2_hddve")
 
 [node name="DownCardPortrait" type="TextureRect" parent="Template"]
 unique_name_in_owner = true
@@ -62,10 +62,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -202.5
-offset_top = 166.5
-offset_right = 209.5
-offset_bottom = 233.5
+offset_left = -203.5
+offset_top = 192.0
+offset_right = 208.5
+offset_bottom = 259.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -85,13 +85,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -198.5
-offset_top = 211.5
+offset_top = 241.0
 offset_right = 219.5
-offset_bottom = 316.5
+offset_bottom = 346.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.5882353, 0, 1)
 theme_override_fonts/font = ExtResource("4_dqwud")
 theme_override_font_sizes/font_size = 18
 text = "Template de texto de díalogo. Exemplo bem grandão pro texto ficar maior e saber como vai ficar. Acho que assim ta bom"
@@ -101,17 +100,17 @@ autowrap_mode = 3
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
-offset_left = 122.0
-offset_top = 445.0
-offset_right = 429.0
-offset_bottom = 605.0
+offset_left = 117.0
+offset_top = 501.0
+offset_right = 424.0
+offset_bottom = 661.0
 theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Label" type="Label" parent="Template/ChoiceLeftContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dqwud")
-text = "Texto de escolha esquerda vem aqui... 64 Caracteres max"
+text = "Texto de escolha esquerda vem aqui... 64 Caracteres maxvcxvxcvxcvxcvxvxcvxcv"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -123,16 +122,16 @@ alignment = 1
 [node name="Money" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("3_money")
+texture = ExtResource("6_hddve")
 expand_mode = 1
 
 [node name="Moral" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("4_moral")
+texture = ExtResource("7_hddve")
 expand_mode = 1
 
-[node name="Infra" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
+[node name="Sec" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("8_hddve")
@@ -141,17 +140,17 @@ expand_mode = 1
 [node name="Reputation" type="TextureRect" parent="Template/ChoiceLeftContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("6_rep")
+texture = ExtResource("9_hddve")
 expand_mode = 1
 
 [node name="ChoiceRightContainer" type="VBoxContainer" parent="Template"]
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
-offset_left = 122.0
-offset_top = 445.0
-offset_right = 429.0
-offset_bottom = 605.0
+offset_left = 117.0
+offset_top = 501.0
+offset_right = 424.0
+offset_bottom = 661.0
 theme_override_constants/separation = 8
 alignment = 1
 
@@ -159,7 +158,7 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.3647059)
 theme_override_fonts/font = ExtResource("4_dqwud")
-text = "Texto de escolha direita vem aqui... 64 Caracteres max"
+text = "Texto de escolha direita vem aqui... 64 Caracteres maxvcxvxcvxcvxcvxvxcvxcv"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -171,16 +170,16 @@ alignment = 1
 [node name="Money" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("3_money")
+texture = ExtResource("6_hddve")
 expand_mode = 1
 
 [node name="Moral" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("4_moral")
+texture = ExtResource("7_hddve")
 expand_mode = 1
 
-[node name="Infra" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
+[node name="Sec" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("8_hddve")
@@ -189,5 +188,5 @@ expand_mode = 1
 [node name="Reputation" type="TextureRect" parent="Template/ChoiceRightContainer/Icons"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("6_rep")
+texture = ExtResource("9_hddve")
 expand_mode = 1

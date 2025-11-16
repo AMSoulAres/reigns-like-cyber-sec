@@ -1,153 +1,139 @@
 [gd_scene load_steps=7 format=3 uid="uid://sjjqiunoj0qe"]
 
-[ext_resource type="Texture2D" uid="uid://buqvdrrshwe12" path="res://assets/stats/Money_ICON.png" id="1_ua6yw"]
 [ext_resource type="Script" uid="uid://bsb5gvf82yant" path="res://scenes/UI.gd" id="2_3wlde"]
-[ext_resource type="Texture2D" uid="uid://b335w477c37dx" path="res://assets/stats/Moral Icon.png" id="2_75u2n"]
+[ext_resource type="Texture2D" uid="uid://cbpseoaqb2glm" path="res://assets/stats/MoneyIcon.png" id="2_xpksx"]
 [ext_resource type="Texture2D" uid="uid://dan7mfjx1qda4" path="res://assets/stats/Fill.png" id="3_3wlde"]
-[ext_resource type="Texture2D" uid="uid://davr1u6ywu1l7" path="res://assets/stats/Integrity Icon.png" id="4_75u2n"]
-[ext_resource type="Texture2D" uid="uid://csx0ekb2k6lx2" path="res://assets/stats/Rep Icon.png" id="4_xpksx"]
+[ext_resource type="Texture2D" uid="uid://b4ct8ms1o7pbr" path="res://assets/stats/MoralIcon.png" id="4_3wlde"]
+[ext_resource type="Texture2D" uid="uid://clxk5sn0wntu3" path="res://assets/stats/SecIcon.png" id="5_3wlde"]
+[ext_resource type="Texture2D" uid="uid://dykfmrf80tq1u" path="res://assets/stats/RepIcon.png" id="6_3wlde"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("2_3wlde")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 1.0
-offset_right = 409.0
-offset_bottom = 130.0
-theme_override_constants/separation = 45
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -324.5
+offset_right = 324.5
+offset_bottom = 182.0
+grow_horizontal = 2
+theme_override_constants/separation = 30
+alignment = 1
 
 [node name="MoneyVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="MoneyBar" type="ProgressBar" parent="HBoxContainer/MoneyVBoxContainer"]
+[node name="MoneyFill" type="TextureProgressBar" parent="HBoxContainer/MoneyVBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-show_percentage = false
-
-[node name="MoneyImg" type="TextureRect" parent="HBoxContainer/MoneyVBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("1_ua6yw")
-
-[node name="MoneyFill" type="TextureProgressBar" parent="HBoxContainer/MoneyVBoxContainer/MoneyImg"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = -1.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 value = 50.0
 fill_mode = 3
 texture_progress = ExtResource("3_3wlde")
 tint_under = Color(1, 1, 1, 0)
-tint_progress = Color(0, 1, 1, 0.24705882)
+tint_progress = Color(1, 1, 1, 0.49803922)
+
+[node name="MoneyImg" type="TextureRect" parent="HBoxContainer/MoneyVBoxContainer/MoneyFill"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_top = 4.0
+offset_right = 128.0
+offset_bottom = 132.0
+mouse_filter = 2
+texture = ExtResource("2_xpksx")
+
+[node name="Label" type="Label" parent="HBoxContainer/MoneyVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Dinheiro"
+horizontal_alignment = 1
 
 [node name="MoralVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="MoralBar" type="ProgressBar" parent="HBoxContainer/MoralVBoxContainer"]
+[node name="MoralFill" type="TextureProgressBar" parent="HBoxContainer/MoralVBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-show_percentage = false
-
-[node name="MoralImg" type="TextureRect" parent="HBoxContainer/MoralVBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_75u2n")
-
-[node name="MoralFill" type="TextureProgressBar" parent="HBoxContainer/MoralVBoxContainer/MoralImg"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -2.0
-offset_right = -1.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 value = 50.0
 fill_mode = 3
 texture_progress = ExtResource("3_3wlde")
 tint_under = Color(1, 1, 1, 0)
-tint_progress = Color(0.8784314, 0.27058825, 0.8392157, 0.35686275)
+tint_progress = Color(1, 1, 1, 0.49803922)
 
-[node name="InfraVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="InfraBar" type="ProgressBar" parent="HBoxContainer/InfraVBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-show_percentage = false
-
-[node name="InfraImg" type="TextureRect" parent="HBoxContainer/InfraVBoxContainer"]
+[node name="MoralImg" type="TextureRect" parent="HBoxContainer/MoralVBoxContainer/MoralFill"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
+layout_mode = 0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 129.0
 mouse_filter = 2
-texture = ExtResource("4_75u2n")
+texture = ExtResource("4_3wlde")
 
-[node name="InfraFill" type="TextureProgressBar" parent="HBoxContainer/InfraVBoxContainer/InfraImg"]
+[node name="Label" type="Label" parent="HBoxContainer/MoralVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Engajamento"
+horizontal_alignment = 1
+
+[node name="SecVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SecFill" type="TextureProgressBar" parent="HBoxContainer/SecVBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = -1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 mouse_filter = 2
 value = 50.0
 fill_mode = 3
 texture_progress = ExtResource("3_3wlde")
 tint_under = Color(1, 1, 1, 0)
-tint_progress = Color(0.2, 0.92156863, 0.4745098, 0.2901961)
+tint_progress = Color(1, 1, 1, 0.49803922)
+
+[node name="SecImg" type="TextureRect" parent="HBoxContainer/SecVBoxContainer/SecFill"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 129.0
+mouse_filter = 2
+texture = ExtResource("5_3wlde")
+
+[node name="Label" type="Label" parent="HBoxContainer/SecVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Segurança"
+horizontal_alignment = 1
 
 [node name="RepVBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="RepBar" type="ProgressBar" parent="HBoxContainer/RepVBoxContainer"]
+[node name="RepFill" type="TextureProgressBar" parent="HBoxContainer/RepVBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-show_percentage = false
-
-[node name="RepImg" type="TextureRect" parent="HBoxContainer/RepVBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("4_xpksx")
-
-[node name="RepFill" type="TextureProgressBar" parent="HBoxContainer/RepVBoxContainer/RepImg"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -3.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 value = 50.0
 fill_mode = 3
 texture_progress = ExtResource("3_3wlde")
 tint_under = Color(1, 1, 1, 0)
-tint_progress = Color(0.8784314, 0.8784314, 0.43529412, 0.4392157)
+tint_progress = Color(0.8784314, 0.8784314, 1, 0.49803922)
+
+[node name="RepImg" type="TextureRect" parent="HBoxContainer/RepVBoxContainer/RepFill"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_top = -11.0
+offset_right = 130.0
+offset_bottom = 128.0
+mouse_filter = 2
+texture = ExtResource("6_3wlde")
+
+[node name="Label" type="Label" parent="HBoxContainer/RepVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Reputação"
+horizontal_alignment = 1

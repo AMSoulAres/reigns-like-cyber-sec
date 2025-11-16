@@ -6,6 +6,7 @@ const CardScene = preload("res://scenes/Card.tscn")
 @onready var background: Sprite2D = $Background
 @onready var card_container: Node2D = $CardContainer
 @onready var card_spawn_point = $CardSpawnPoint
+@onready var ui_layer: Node = $UI
 
 var card_lookup: Dictionary = {}
 var draw_pile: Array = []
@@ -82,6 +83,10 @@ func draw_next_card():
 		if card_instance.has_method("update_layout"):
 			card_instance.update_layout(current_viewport_size)
 	_position_card(card_instance)
+	var card_size = Vector2.ZERO
+	if card_instance.has_method("get_scaled_size"):
+		card_size = card_instance.get_scaled_size()
+	_update_ui_layer(card_size)
 	if card_instance.has_method("play_draw_animation"):
 		card_instance.play_draw_animation()
 	card_instance.card_resolved.connect(_on_card_resolved)
@@ -91,10 +96,20 @@ func _update_layout():
 	current_viewport_size = get_viewport().get_visible_rect().size
 	card_spawn_point.position = current_viewport_size * 0.5
 	_update_background()
+	var first_card_size := Vector2.ZERO
 	for child in card_container.get_children():
 		if child.has_method("update_layout"):
 			child.update_layout(current_viewport_size)
 		_position_card(child)
+		if first_card_size == Vector2.ZERO and child.has_method("get_scaled_size"):
+			first_card_size = child.get_scaled_size()
+	_update_ui_layer(first_card_size)
+
+func _update_ui_layer(card_size: Vector2):
+	if ui_layer == null:
+		return
+	if ui_layer.has_method("update_card_metrics"):
+		ui_layer.update_card_metrics(card_size, current_viewport_size)
 
 func _update_background():
 	if background == null or background.texture == null:

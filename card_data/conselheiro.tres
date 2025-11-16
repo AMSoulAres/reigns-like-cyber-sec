@@ -6,17 +6,17 @@
 [resource]
 script = ExtResource("1_h3jpb")
 card_id = "conselheira1"
-character = "Especialista em Infra"
+character = "Especialista em Sec"
 portrait = ExtResource("1_ultvn")
 dialogue = "Alguns de nossos servidores estao desatualizados. Investimos agora na renovacao de licencas?"
 choice_left_text = "Nao da, vamos apertar mais um trimestre."
 choice_right_text = "Atualize tudo antes que vire incidente."
 effects_left = {
-"infra": -8,
+"sec": -8,
 "moral": -5
 }
 effects_right = {
-"infra": 10,
+"sec": 10,
 "money": -12
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

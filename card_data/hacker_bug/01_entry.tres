@@ -16,7 +16,7 @@ reshuffle_after_use = false
 choice_left_text = "Isso pode esperar, temos outros incendios."
 choice_right_text = "Otimo trabalho. Pague a recompensa agora."
 effects_left = {
-"infra": -5,
+"sec": -5,
 "reputation": -8
 }
 effects_right = {

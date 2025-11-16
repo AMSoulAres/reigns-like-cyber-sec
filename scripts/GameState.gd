@@ -17,12 +17,12 @@ var moral: int:
 	set(value):
 		_moral = clamp(value, MIN_STAT, MAX_STAT)
 
-var _infra: int = 50
-var infra: int:
+var _sec: int = 50
+var sec: int:
 	get:
-		return _infra
+		return _sec
 	set(value):
-		_infra = clamp(value, MIN_STAT, MAX_STAT)
+		_sec = clamp(value, MIN_STAT, MAX_STAT)
 
 var _reputation: int = 50
 var reputation: int:
@@ -41,8 +41,8 @@ func _ready():
 func apply_effects(effects: Dictionary):
 	if effects.has("money"):
 		money = money + effects["money"]
-	if effects.has("infra"):
-		infra = infra + effects["infra"]
+	if effects.has("sec"):
+		sec = sec + effects["sec"]
 	if effects.has("moral"):
 		moral = moral + effects["moral"]
 	if effects.has("reputation"):
@@ -52,8 +52,8 @@ func apply_effects(effects: Dictionary):
 	check_game_over_conditions()
 	
 func check_game_over_conditions():
-	var depleted = money <= MIN_STAT or infra <= MIN_STAT or moral <= MIN_STAT or reputation <= MIN_STAT
-	var overflow = money >= MAX_STAT or infra >= MAX_STAT or moral >= MAX_STAT or reputation >= MAX_STAT
+	var depleted = money <= MIN_STAT or sec <= MIN_STAT or moral <= MIN_STAT or reputation <= MIN_STAT
+	var overflow = money >= MAX_STAT or sec >= MAX_STAT or moral >= MAX_STAT or reputation >= MAX_STAT
 
 	if depleted:
 		emit_signal("game_over")
@@ -70,7 +70,7 @@ func trigger_game_over(message: String = ""):
 func emit_stats_changed():
 	var stats = {
 		"money": money,
-		"infra": infra,
+		"sec": sec,
 		"moral": moral,
 		"reputation": reputation
 	}

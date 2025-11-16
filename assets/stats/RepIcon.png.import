@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b335w477c37dx"
-path="res://.godot/imported/Moral Icon.png-bcb309680e534a929fc744f1cc575c62.ctex"
+uid="uid://dykfmrf80tq1u"
+path="res://.godot/imported/RepIcon.png-f08daf53369565718d5ed3983ebe045a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stats/Moral Icon.png"
-dest_files=["res://.godot/imported/Moral Icon.png-bcb309680e534a929fc744f1cc575c62.ctex"]
+source_file="res://assets/stats/RepIcon.png"
+dest_files=["res://.godot/imported/RepIcon.png-f08daf53369565718d5ed3983ebe045a.ctex"]
 
 [params]
 

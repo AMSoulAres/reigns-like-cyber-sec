@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://davr1u6ywu1l7"
-path="res://.godot/imported/Integrity Icon.png-782023e49fbf65d19e4bbc11835a0501.ctex"
+uid="uid://b4ct8ms1o7pbr"
+path="res://.godot/imported/MoralIcon.png-47a2801294dd74346602ceb833821e02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stats/Integrity Icon.png"
-dest_files=["res://.godot/imported/Integrity Icon.png-782023e49fbf65d19e4bbc11835a0501.ctex"]
+source_file="res://assets/stats/MoralIcon.png"
+dest_files=["res://.godot/imported/MoralIcon.png-47a2801294dd74346602ceb833821e02.ctex"]
 
 [params]
 

@@ -16,12 +16,12 @@ reshuffle_after_use = false
 choice_left_text = "Contrate especialistas e faca simulacoes reais."
 choice_right_text = "Eu monto um workshop rapido interno."
 effects_left = {
-"infra": 5,
+"sec": 5,
 "money": -12,
 "moral": 5
 }
 effects_right = {
-"infra": 3,
+"sec": 3,
 "moral": 3
 }
 next_card_id_left = "tech_breach_03_audit"

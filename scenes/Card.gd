@@ -29,6 +29,7 @@ var base_portrait_color = Color.WHITE
 var base_downcard_pos = Vector2.ZERO
 var base_downcard_scale = Vector2.ONE
 var base_downcard_color = Color.WHITE
+var current_viewport_size = Vector2.ZERO
 
 # Função pública para configurar o cartão com dados específicos.
 func setup_card(data):
@@ -57,7 +58,7 @@ func _setup_icons(container: Control, effects: Dictionary):
 	var icon_paths = {
 		"money": "Icons/Money",
 		"moral": "Icons/Moral",
-		"infra": "Icons/Infra",
+		"sec": "Icons/Sec",
 		"reputation": "Icons/Reputation"
 	}
 
@@ -112,6 +113,7 @@ func update_layout(viewport_size: Vector2):
 		_cache_template_size()
 	if base_template_size == Vector2.ZERO or viewport_size.y <= 0:
 		return
+	current_viewport_size = viewport_size
 	var scale_factor = viewport_size.y / base_template_size.y
 	scale = Vector2.ONE * scale_factor
 	if entry_tween and entry_tween.is_running():
@@ -133,7 +135,12 @@ func get_scaled_size() -> Vector2:
 	return base_template_size * scale
 
 func _update_swipe_threshold():
-	swipe_threshold = max(BASE_SWIPE_THRESHOLD * scale.x, 1.0)
+	var scaled_threshold = max(BASE_SWIPE_THRESHOLD * scale.x, 1.0)
+	if current_viewport_size != Vector2.ZERO:
+		var viewport_limit = current_viewport_size.x * 0.35
+		swipe_threshold = min(scaled_threshold, viewport_limit)
+	else:
+		swipe_threshold = scaled_threshold
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -175,11 +182,11 @@ func _update_drag_visuals():
 func process_swipe():
 	var final_delta_x = drag_offset.x
 	
-	# Verifica se o deslize excedeu o limiar para a esquerda.
+	# Verifica se o deslize excedeu o limite para a esquerda.
 	if final_delta_x < -swipe_threshold:
 		card_resolved.emit(card_data, "left")
 		queue_free()
-	# Verifica se o deslize excedeu o limiar para a direita.
+	# Verifica se o deslize excedeu o limite para a direita.
 	elif final_delta_x > swipe_threshold:
 		card_resolved.emit(card_data, "right")
 		queue_free()
