@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ugc40qjki2f2"]
+
+[ext_resource type="Texture2D" uid="uid://bjk6e3mkhfvai" path="res://assets/card_images/DepartmentChief.png" id="1_t1yhu"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_rep_max_2"
+character = "Presidente da CyberSec"
+portrait = ExtResource("1_t1yhu")
+dialogue = "Seu último memorando sobre Higiene de Senhas foi publicado e agora é um best-seller de autoajuda. Nós decidimos que nossos produtos são mundanos demais e precisamos guiar o mundo."
+questline_id = "game_over_rep_max"
+quest_step = 1
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "O mundo?"
+choice_right_text = "E meu trabalho?"
+next_card_id_left = "game_over_rep_max_3"
+next_card_id_right = "game_over_rep_max_3"

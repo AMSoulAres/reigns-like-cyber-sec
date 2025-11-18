@@ -10,14 +10,12 @@ character = "Hacker Etico"
 portrait = ExtResource("1_portrait")
 dialogue = "Encontrei uma falha critica e ja enviei o relatorio pelo nosso Bug Bounty. Como seguimos?"
 questline_id = "hacker_bug"
-quest_step = 0
-available_from_start = true
 reshuffle_after_use = false
 choice_left_text = "Isso pode esperar, temos outros incendios."
 choice_right_text = "Otimo trabalho. Pague a recompensa agora."
 effects_left = {
-"sec": -5,
-"reputation": -8
+"reputation": -8,
+"sec": -5
 }
 effects_right = {
 "money": -10,

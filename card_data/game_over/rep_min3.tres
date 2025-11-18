@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://i8gtdtfiagb1"]
+
+[ext_resource type="Texture2D" uid="uid://dxcwphojaeq2q" path="res://assets/card_images/final_rep.png" id="1_6t51t"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_rep_min_3"
+character = "Narrador"
+portrait = ExtResource("1_6t51t")
+dialogue = "O conselho anunciou no TikTok que desistiu da CyberSec. A empresa foi colocada no Marketplace por US$5 e um sanduíche de queijo. Você está demitido."
+questline_id = "game_over_rep_min"
+quest_step = 2
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "O quê?!"
+choice_right_text = "O quê?!"
+game_over_left = true
+game_over_right = true

@@ -18,6 +18,7 @@ var current_viewport_size: Vector2 = Vector2.ZERO
 
 func _ready():
 	GameState.game_over.connect(_on_game_over)
+	GameState.game_over_sequence_requested.connect(_on_game_over_sequence_requested)
 	get_viewport().size_changed.connect(_on_viewport_size_changed)
 	_update_layout()
 	load_deck("res://card_data/")
@@ -173,10 +174,12 @@ func _on_card_resolved(card_data: CardData, choice: String):
 	var next_id = card_data.next_card_id_right
 	var next_delay = card_data.next_card_delay_right
 	var should_game_over = card_data.game_over_right
+	var explicit_reason = card_data.game_over_right_reason
 	if choice == "left":
 		next_id = card_data.next_card_id_left
 		next_delay = card_data.next_card_delay_left
 		should_game_over = card_data.game_over_left
+		explicit_reason = card_data.game_over_left_reason
 
 	if card_data.questline_id != "":
 		_update_questline_state(card_data, next_id)
@@ -190,7 +193,9 @@ func _on_card_resolved(card_data: CardData, choice: String):
 		discard_pile.append(card_data)
 
 	if should_game_over:
-		var reason = "%s: a escolha '%s' encerrou a jornada." % [card_data.character, choice]
+		var reason = explicit_reason.strip_edges() if explicit_reason is String else ""
+		if reason == "":
+			reason = "%s: a escolha '%s' encerrou a jornada." % [card_data.character, choice]
 		GameState.trigger_game_over(reason)
 
 func _schedule_follow_up(card_id: String, delay: int, questline_id: String):
@@ -237,3 +242,30 @@ func _on_game_over():
 	print("O jogo terminou. A mudar para a cena de Game Over.")
 	game_has_ended = true
 	get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
+
+func _on_game_over_sequence_requested(card_id: String, reason: String):
+	if reason.strip_edges() != "":
+		GameState.last_game_over_reason = reason
+	if card_id == "":
+		GameState.trigger_game_over(reason)
+		return
+	if not card_lookup.has(card_id):
+		push_warning("Carta de game over %s nao encontrada." % card_id)
+		GameState.trigger_game_over(reason)
+		return
+	for entry in pending_cards:
+		if entry.get("card_id", "") == card_id:
+			return
+	var card: CardData = card_lookup[card_id]
+	var questline_id = card.questline_id
+	var entry = {
+		"card_id": card_id,
+		"remaining": 0,
+		"questline_id": questline_id
+	}
+	pending_cards.insert(0, entry)
+	if questline_id != "":
+		var state = questline_state.get(questline_id, {"status": "idle", "step": card.quest_step})
+		state["status"] = "active"
+		state["step"] = card.quest_step
+		questline_state[questline_id] = state

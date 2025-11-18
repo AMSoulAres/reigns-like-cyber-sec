@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://msxenagj68yo"]
+
+[ext_resource type="Texture2D" uid="uid://dhf53o5ksff3g" path="res://assets/card_images/HappyDog.png" id="1_lfid8"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_kgaoo"]
+
+[resource]
+script = ExtResource("2_kgaoo")
+card_id = "rep_test_high"
+questline_id = "tests"
+quest_step = 2
+character = "Nerdola"
+portrait = ExtResource("1_lfid8")
+dialogue = "Woof!! Testar fim de jogo por reputação alta?"
+choice_left_text = "Ir para próxima carta"
+choice_right_text = "Maximizar a reputação da empresa."
+effects_right = {
+"reputation": 100
+}
+next_card_id_left = "sec_test_high"
+available_from_start = false
+reshuffle_after_use = false
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

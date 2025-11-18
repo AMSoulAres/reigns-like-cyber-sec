@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://rvhbwf7bndia"]
+
+[ext_resource type="Texture2D" uid="uid://ddqtgvcllh0mv" path="res://assets/card_images/News.png" id="1_s06ba"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_sec_min_1"
+character = "Apresentador de TV"
+portrait = ExtResource("1_s06ba")
+dialogue = "A empresa sofreu seu 14º vazamento de dados do mês. Organizamos coletiva de imprensa… mas só apareceram um pombo e um estudante de jornalismo que errou o endereço. "
+questline_id = "game_over_sec_min"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Fizemos o o que podíamos..."
+choice_right_text = "Acontece... né?"
+next_card_id_left = "game_over_sec_min_2"
+next_card_id_right = "game_over_sec_min_2"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cv5tdf7m84w3l"]
+
+[ext_resource type="Texture2D" uid="uid://duoy5olj00v58" path="res://assets/card_images/cachorrinho_dormindo.png" id="1_ll0fk"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_money_min_2"
+character = "Novo Email"
+portrait = ExtResource("1_ll0fk")
+dialogue = "Você atingiu o fundo do poço. Sua segurança é fita adesiva, esperança e um cachorro sonolento. Seu AntiVírus acaba de expirar e ninguém sabe o que é um patch de segurança."
+questline_id = "game_over_money_min"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Estou perdido!"
+choice_right_text = "Melhor sair enquanto ainda temos luz"
+game_over_left = true
+game_over_right = true

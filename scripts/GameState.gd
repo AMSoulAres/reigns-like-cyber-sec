@@ -31,11 +31,52 @@ var reputation: int:
 	set(value):
 		_reputation = clamp(value, MIN_STAT, MAX_STAT)
 
+var last_game_over_reason: String = ""
+
+const GAME_OVER_SEQUENCES = {
+	"money_min": {
+		"card_id": "game_over_money_min_1",
+		"reason": "Os cofres secaram."
+	},
+	"money_max": {
+		"card_id": "game_over_money_max_1",
+		"reason": "A tesouraria saiu do controle."
+	},
+	"moral_min": {
+		"card_id": "game_over_moral_min_1",
+		"reason": "O engajamento da equipe despencou."
+	},
+	"moral_max": {
+		"card_id": "game_over_moral_max_1",
+		"reason": "O engajamento da equipe saiu do controle."
+	},
+	"sec_min": {
+		"card_id": "game_over_sec_min_1",
+		"reason": "A defesa cibernetica colapsou."
+	},
+	"sec_max": {
+		"card_id": "game_over_sec_max_1",
+		"reason": "A defesa cibernetica travou a operacao."
+	},
+	"reputation_min": {
+		"card_id": "game_over_rep_min_1",
+		"reason": "A reputacao da empresa afundou."
+	},
+	"reputation_max": {
+		"card_id": "game_over_rep_max_1",
+		"reason": "A reputacao desmedida provocou caos."
+	}
+}
+
+var _sequence_triggered: Dictionary = {}
+
 # --- Sinais de Jogo e Estado ---
 signal stats_changed(stats_dict)
 signal game_over
+signal game_over_sequence_requested(card_id: String, reason: String)
 
 func _ready():
+	_reset_sequences()
 	emit_stats_changed()
 
 func apply_effects(effects: Dictionary):
@@ -52,20 +93,31 @@ func apply_effects(effects: Dictionary):
 	check_game_over_conditions()
 	
 func check_game_over_conditions():
-	var depleted = money <= MIN_STAT or sec <= MIN_STAT or moral <= MIN_STAT or reputation <= MIN_STAT
-	var overflow = money >= MAX_STAT or sec >= MAX_STAT or moral >= MAX_STAT or reputation >= MAX_STAT
-
-	if depleted:
-		emit_signal("game_over")
-		print("Game Over: Um dos recursos se esgotou.")
-	elif overflow:
-		emit_signal("game_over")
-		print("Game Over: Um dos recursos excedeu o limite.")
+	_maybe_queue_sequence("money_min", money <= MIN_STAT)
+	_maybe_queue_sequence("money_max", money >= MAX_STAT)
+	_maybe_queue_sequence("moral_min", moral <= MIN_STAT)
+	_maybe_queue_sequence("moral_max", moral >= MAX_STAT)
+	_maybe_queue_sequence("sec_min", sec <= MIN_STAT)
+	_maybe_queue_sequence("sec_max", sec >= MAX_STAT)
+	_maybe_queue_sequence("reputation_min", reputation <= MIN_STAT)
+	_maybe_queue_sequence("reputation_max", reputation >= MAX_STAT)
 
 func trigger_game_over(message: String = ""):
 	if message != "":
+		last_game_over_reason = message
 		print(message)
+	else:
+		last_game_over_reason = "O jogo terminou."
 	emit_signal("game_over")
+
+func reset_state():
+	money = 50
+	sec = 50
+	moral = 50
+	reputation = 50
+	last_game_over_reason = ""
+	_reset_sequences()
+	emit_stats_changed()
 
 func emit_stats_changed():
 	var stats = {
@@ -75,3 +127,24 @@ func emit_stats_changed():
 		"reputation": reputation
 	}
 	emit_signal("stats_changed", stats)
+
+func _maybe_queue_sequence(key: String, condition: bool):
+	if not condition:
+		return
+	if _sequence_triggered.get(key, false):
+		return
+	var info: Dictionary = GAME_OVER_SEQUENCES.get(key, {})
+	var card_id: String = info.get("card_id", "")
+	var reason: String = info.get("reason", "")
+	_sequence_triggered[key] = true
+	if reason != "":
+		last_game_over_reason = reason
+	if card_id == "":
+		trigger_game_over(reason)
+	else:
+		emit_signal("game_over_sequence_requested", card_id, reason)
+
+func _reset_sequences():
+	_sequence_triggered.clear()
+	for key in GAME_OVER_SEQUENCES.keys():
+		_sequence_triggered[key] = false
