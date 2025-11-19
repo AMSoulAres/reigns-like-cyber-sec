@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://o0d1i4hp831l"]
+
+[ext_resource type="Texture2D" uid="uid://ct30cr8mfsx56" path="res://assets/card_images/sec_max.png" id="1_ehklb"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_sec_max_3"
+character = "Desenvolvedor"
+portrait = ExtResource("1_ehklb")
+dialogue = "Nem clientes e nem funcionários conseguem acessar o sistema. A empresa colapsa por excesso de segurança. Você é desligado… após autenticar a demissão em três fatores."
+questline_id = "game_over_sec_max"
+quest_step = 1
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Fizemos o o que podíamos..."
+choice_right_text = "Acontece... né?"
+game_over_left = true
+game_over_right = true
+game_over_left_reason = "O sistema mais seguro é aquele que ninguém consegue acessar. Você excedeu a segurança."
+game_over_right_reason = "O sistema mais seguro é aquele que ninguém consegue acessar. Você excedeu a segurança."

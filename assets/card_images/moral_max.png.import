@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://borrwiycy5sk3"
-path="res://.godot/imported/Tech_Guy.png-be620b02baf197eeba4329537b6dd79b.ctex"
+uid="uid://v7tfw1igcppu"
+path="res://.godot/imported/moral_max.png-c7dfa4fb5615649b73341c1d019b9063.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card_images/Tech_Guy.png"
-dest_files=["res://.godot/imported/Tech_Guy.png-be620b02baf197eeba4329537b6dd79b.ctex"]
+source_file="res://assets/card_images/moral_max.png"
+dest_files=["res://.godot/imported/moral_max.png-c7dfa4fb5615649b73341c1d019b9063.ctex"]
 
 [params]
 

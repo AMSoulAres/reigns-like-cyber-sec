@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://msxenagj68yo"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://msxenagj68yog"]
 
 [ext_resource type="Texture2D" uid="uid://dhf53o5ksff3g" path="res://assets/card_images/HappyDog.png" id="1_lfid8"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_kgaoo"]

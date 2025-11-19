@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmqhplh6rblhv"
-path="res://.godot/imported/Engineer.png-474aafa11584690c9baab59a1ac14fec.ctex"
+uid="uid://chdaag4cwvd7g"
+path="res://.godot/imported/money_max.png-bfd7392f4fdaa47d83ab36a021728226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card_images/Engineer.png"
-dest_files=["res://.godot/imported/Engineer.png-474aafa11584690c9baab59a1ac14fec.ctex"]
+source_file="res://assets/card_images/money_max.png"
+dest_files=["res://.godot/imported/money_max.png-bfd7392f4fdaa47d83ab36a021728226.ctex"]
 
 [params]
 

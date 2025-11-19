@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdtb8bb2np7yn"
-path="res://.godot/imported/CyberGirl.png-013d367c215c9a042afae54724b02c0e.ctex"
+uid="uid://ct30cr8mfsx56"
+path="res://.godot/imported/sec_max.png-c93c985bd2f16b36283189b50db46160.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card_images/CyberGirl.png"
-dest_files=["res://.godot/imported/CyberGirl.png-013d367c215c9a042afae54724b02c0e.ctex"]
+source_file="res://assets/card_images/sec_max.png"
+dest_files=["res://.godot/imported/sec_max.png-c93c985bd2f16b36283189b50db46160.ctex"]
 
 [params]
 

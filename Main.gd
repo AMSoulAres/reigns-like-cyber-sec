@@ -217,6 +217,16 @@ func _schedule_follow_up(card_id: String, delay: int, questline_id: String):
 		state["step"] = future_card.quest_step
 		questline_state[questline_id] = state
 
+func _clear_pending_for_questline(questline_id: String, keep_card_id: String = ""):
+	if questline_id == "":
+		return
+	var index := pending_cards.size() - 1
+	while index >= 0:
+		var entry: Dictionary = pending_cards[index]
+		if entry.get("questline_id", "") == questline_id and entry.get("card_id", "") != keep_card_id:
+			pending_cards.remove_at(index)
+		index -= 1
+
 func _advance_pending_delays():
 	for entry in pending_cards:
 		entry["remaining"] = max(entry.get("remaining", 0) - 1, 0)
@@ -258,6 +268,7 @@ func _on_game_over_sequence_requested(card_id: String, reason: String):
 			return
 	var card: CardData = card_lookup[card_id]
 	var questline_id = card.questline_id
+	_clear_pending_for_questline(questline_id, card_id)
 	var entry = {
 		"card_id": card_id,
 		"remaining": 0,

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://l8c4vk1emene"]
 
 [ext_resource type="Script" uid="uid://lqj5333xy445" path="res://scenes/Card.gd" id="1_yiag5"]
-[ext_resource type="Texture2D" uid="uid://blty5btx5kehl" path="res://assets/Template Principalv2.png" id="2_hddve"]
+[ext_resource type="Texture2D" uid="uid://ddoou71fj6kgm" path="res://assets/card_images/Template Principalv3.png" id="2_hddve"]
 [ext_resource type="Texture2D" uid="uid://c6ie06dnm6awt" path="res://assets/DownCard.png" id="3_hddve"]
 [ext_resource type="Texture2D" uid="uid://b8uoxwq46ywux" path="res://assets/card_images/PoliceDog.png" id="3_qbjcq"]
 [ext_resource type="FontFile" uid="uid://cn8mt6w1q3se3" path="res://assets/FiraCode-VariableFont_wght.ttf" id="4_dqwud"]
@@ -85,9 +85,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -211.5
-offset_top = 213.0
+offset_top = 223.0
 offset_right = 232.5
-offset_bottom = 372.0
+offset_bottom = 382.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)

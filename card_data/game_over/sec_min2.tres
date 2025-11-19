@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bnynbl5uny5q0"]
+
+[ext_resource type="Texture2D" uid="uid://bfou55yf50qmw" path="res://assets/card_images/book.png" id="1_b63ry"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_sec_min_2"
+character = "Narrador"
+portrait = ExtResource("1_b63ry")
+dialogue = "A negligência finalmente cobra seu preço: uma cadeia de ataques automatizados passou por seus sistemas como vento por uma janela aberta. O sistema colapsou."
+questline_id = "game_over_sec_min"
+quest_step = 1
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Acho que dá pra recuperar..."
+choice_right_text = "Estamos ferrados..."
+next_card_id_left = "game_over_sec_min_3"
+next_card_id_right = "game_over_sec_min_3"

@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cijyfpq75me63"]
 
-[ext_resource type="Texture2D" uid="uid://ddqtgvcllh0mv" path="res://assets/card_images/News.png" id="1_s06ba"]
+[ext_resource type="Texture2D" uid="uid://bjk6e3mkhfvai" path="res://assets/card_images/DepartmentChief.png" id="1_l78is"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "game_over_money_max_1"
-character = "Apresentador de TV"
-portrait = ExtResource("1_s06ba")
-dialogue = "A empresa sofreu seu 14º vazamento de dados do mês. Organizamos coletiva de imprensa… mas só apareceram um pombo e um estudante de jornalismo que errou o endereço. "
+character = "Chefe de Departamento"
+portrait = ExtResource("1_l78is")
+dialogue = "Aprovei o pedido para os servidores banhados a ouro e o centro de operações nas Maldivas. A Forbes vai nos eleger o 'Departamento de TI Mais Luxuoso do Ano'!"
 questline_id = "game_over_money_max"
 available_from_start = false
 reshuffle_after_use = false
-choice_left_text = "Fizemos o o que podíamos..."
-choice_right_text = "Acontece... né?"
+choice_left_text = "O estagiário pediu mais um servidor desses?"
+choice_right_text = "Temos que comemorar!"
 next_card_id_left = "game_over_money_max_2"
 next_card_id_right = "game_over_money_max_2"
