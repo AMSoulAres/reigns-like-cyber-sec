@@ -16,6 +16,8 @@ var _base_container_pos: Vector2 = Vector2.ZERO
 var _layout_ready := false
 var _last_card_size: Vector2 = Vector2.ZERO
 var _last_viewport_size: Vector2 = Vector2.ZERO
+var _viewport_connected := false
+var _viewport_retry_in_progress := false
 
 const COLOR_HIGHLIGHT_UP = Color(0.2, 0.85, 0.2, 1.0)
 const COLOR_HIGHLIGHT_DOWN = Color(0.9, 0.2, 0.2, 1.0)
@@ -35,7 +37,7 @@ func _ready():
 
 	await get_tree().process_frame
 	_capture_layout_metrics()
-	_connect_viewport_signals()
+	await _connect_viewport_signals()
 	_update_layout()
 
 	# Chama a função uma vez no início para definir os valores iniciais da UI.
@@ -62,13 +64,21 @@ func _on_viewport_size_changed():
 	_update_layout()
 
 func _connect_viewport_signals():
+	if _viewport_connected:
+		return
 	var viewport := get_viewport()
 	if viewport == null:
-		call_deferred("_connect_viewport_signals")
+		if _viewport_retry_in_progress:
+			return
+		_viewport_retry_in_progress = true
+		await get_tree().process_frame
+		_viewport_retry_in_progress = false
+		_connect_viewport_signals()
 		return
 	if not viewport.size_changed.is_connected(_on_viewport_size_changed):
 		viewport.size_changed.connect(_on_viewport_size_changed)
 	_last_viewport_size = viewport.get_visible_rect().size
+	_viewport_connected = true
 
 func update_card_metrics(card_size: Vector2, viewport_size: Vector2):
 	_last_card_size = card_size
