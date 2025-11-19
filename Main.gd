@@ -249,8 +249,15 @@ func _reshuffle_draw_pile():
 	draw_pile.shuffle()
 
 func _on_game_over():
+	if game_has_ended:
+		return
 	print("O jogo terminou. A mudar para a cena de Game Over.")
 	game_has_ended = true
+	call_deferred("_switch_to_game_over_scene")
+
+func _switch_to_game_over_scene():
+	if not is_instance_valid(get_tree()):
+		return
 	get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
 
 func _on_game_over_sequence_requested(card_id: String, reason: String):

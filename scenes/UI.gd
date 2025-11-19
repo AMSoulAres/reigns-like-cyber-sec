@@ -35,8 +35,7 @@ func _ready():
 
 	await get_tree().process_frame
 	_capture_layout_metrics()
-	get_viewport().size_changed.connect(_on_viewport_size_changed)
-	_last_viewport_size = get_viewport().get_visible_rect().size
+	_connect_viewport_signals()
 	_update_layout()
 
 	# Chama a função uma vez no início para definir os valores iniciais da UI.
@@ -56,8 +55,20 @@ func _on_stats_changed(new_stats: Dictionary):
 	_apply_stats(new_stats, true)
 
 func _on_viewport_size_changed():
-	_last_viewport_size = get_viewport().get_visible_rect().size
+	var viewport := get_viewport()
+	if viewport == null:
+		return
+	_last_viewport_size = viewport.get_visible_rect().size
 	_update_layout()
+
+func _connect_viewport_signals():
+	var viewport := get_viewport()
+	if viewport == null:
+		call_deferred("_connect_viewport_signals")
+		return
+	if not viewport.size_changed.is_connected(_on_viewport_size_changed):
+		viewport.size_changed.connect(_on_viewport_size_changed)
+	_last_viewport_size = viewport.get_visible_rect().size
 
 func update_card_metrics(card_size: Vector2, viewport_size: Vector2):
 	_last_card_size = card_size
