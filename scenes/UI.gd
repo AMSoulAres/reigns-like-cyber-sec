@@ -66,6 +66,9 @@ func _on_viewport_size_changed():
 func _connect_viewport_signals() -> void:
 	if _viewport_connected:
 		return
+	var tree := get_tree()
+	if tree == null:
+		return
 	while true:
 		var viewport := get_viewport()
 		if viewport != null:
@@ -74,7 +77,7 @@ func _connect_viewport_signals() -> void:
 			_last_viewport_size = viewport.get_visible_rect().size
 			_viewport_connected = true
 			return
-		await get_tree().process_frame
+		await tree.process_frame
 
 func update_card_metrics(card_size: Vector2, viewport_size: Vector2):
 	_last_card_size = card_size
