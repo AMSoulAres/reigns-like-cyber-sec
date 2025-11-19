@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/moral_min.png-4073a565f88293df1462f0a0565d330
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

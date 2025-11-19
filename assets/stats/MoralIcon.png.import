@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/MoralIcon.png-47a2801294dd74346602ceb833821e0
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
