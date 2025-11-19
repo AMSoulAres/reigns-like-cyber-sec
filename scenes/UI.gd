@@ -17,7 +17,6 @@ var _layout_ready := false
 var _last_card_size: Vector2 = Vector2.ZERO
 var _last_viewport_size: Vector2 = Vector2.ZERO
 var _viewport_connected := false
-var _viewport_retry_in_progress := false
 
 const COLOR_HIGHLIGHT_UP = Color(0.2, 0.85, 0.2, 1.0)
 const COLOR_HIGHLIGHT_DOWN = Color(0.9, 0.2, 0.2, 1.0)
@@ -34,15 +33,16 @@ func _ready():
 	_register_fill(moral_fill)
 	_register_fill(sec_fill)
 	_register_fill(reputation_fill)
+	call_deferred("_initialize_ui")
 
+func _initialize_ui() -> void:
+	if not is_inside_tree():
+		call_deferred("_initialize_ui")
+		return
 	await get_tree().process_frame
 	_capture_layout_metrics()
 	await _connect_viewport_signals()
 	_update_layout()
-
-	# Chama a função uma vez no início para definir os valores iniciais da UI.
-	# Isto pode ser feito emitindo o sinal no _ready() do GameState, como fizemos.
-	# Ou chamando a função diretamente com os dados iniciais.
 	var initial_stats = {
 		"money": GameState.money,
 		"moral": GameState.moral,
@@ -63,22 +63,18 @@ func _on_viewport_size_changed():
 	_last_viewport_size = viewport.get_visible_rect().size
 	_update_layout()
 
-func _connect_viewport_signals():
+func _connect_viewport_signals() -> void:
 	if _viewport_connected:
 		return
-	var viewport := get_viewport()
-	if viewport == null:
-		if _viewport_retry_in_progress:
+	while true:
+		var viewport := get_viewport()
+		if viewport != null:
+			if not viewport.size_changed.is_connected(_on_viewport_size_changed):
+				viewport.size_changed.connect(_on_viewport_size_changed)
+			_last_viewport_size = viewport.get_visible_rect().size
+			_viewport_connected = true
 			return
-		_viewport_retry_in_progress = true
 		await get_tree().process_frame
-		_viewport_retry_in_progress = false
-		_connect_viewport_signals()
-		return
-	if not viewport.size_changed.is_connected(_on_viewport_size_changed):
-		viewport.size_changed.connect(_on_viewport_size_changed)
-	_last_viewport_size = viewport.get_visible_rect().size
-	_viewport_connected = true
 
 func update_card_metrics(card_size: Vector2, viewport_size: Vector2):
 	_last_card_size = card_size
