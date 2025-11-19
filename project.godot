@@ -25,6 +25,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
+[memory]
+
+limits/message_queue/max_size_mb=500
+
 [rendering]
 
 renderer/rendering_method="mobile"
