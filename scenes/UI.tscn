@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sjjqiunoj0qe"]
+[gd_scene load_steps=8 format=3 uid="uid://sjjqiunoj0qe"]
 
 [ext_resource type="Script" uid="uid://bsb5gvf82yant" path="res://scenes/UI.gd" id="2_3wlde"]
 [ext_resource type="Texture2D" uid="uid://cbpseoaqb2glm" path="res://assets/stats/MoneyIcon.png" id="2_xpksx"]
@@ -13,12 +13,9 @@ script = ExtResource("2_3wlde")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -324.5
-offset_right = 324.5
-offset_bottom = 182.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
 grow_horizontal = 2
 theme_override_constants/separation = 30
 alignment = 1
@@ -142,4 +139,3 @@ horizontal_alignment = 1
 [node name="GlossaryPopup" parent="." instance=ExtResource("7_glossary")]
 unique_name_in_owner = true
 visible = false
-
