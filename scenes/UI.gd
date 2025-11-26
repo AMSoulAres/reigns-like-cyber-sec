@@ -219,17 +219,13 @@ func _update_layout():
 	if glossary_popup and "ui_scale" in glossary_popup:
 		glossary_popup.ui_scale = scale_factor
 	
-	var scaled_size = _base_container_size * scale_factor
-	var base_center = _base_container_pos + (_base_container_size * 0.5)
-	var normalized_center = Vector2(
-		base_center.x / REFERENCE_RESOLUTION.x,
-		base_center.y / REFERENCE_RESOLUTION.y
-	)
-	var target_center = Vector2(
-		viewport_size.x * normalized_center.x,
-		viewport_size.y * normalized_center.y
-	)
-	root_container.position = target_center - (scaled_size * 0.5)
+	# Use pivot-based scaling to keep it centered via anchors
+	# We assume the container is anchored to Top-Center in the scene
+	if root_container.size.x > 0:
+		root_container.pivot_offset = Vector2(root_container.size.x * 0.5, 0)
+	
+	# We do NOT set root_container.position manually anymore.
+	# The anchors will keep it centered, and pivot_offset + scale will handle the resizing from the center.
 
 func _compute_ui_scale(viewport_size: Vector2) -> float:
 	var fallback_scale = min(
