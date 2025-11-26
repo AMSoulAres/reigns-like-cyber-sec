@@ -2,13 +2,16 @@
 extends Node2D
 
 signal card_resolved(card_data, choice: String)
+signal glossary_requested(term_key: String)
+signal glossary_hover(term_key: String, active: bool, position: Vector2)
+
 
 # Referências aos nós principais
 @onready var template: TextureRect = %Template
 @onready var portrait: TextureRect = %Portrait
 @onready var down_card: TextureRect = %DownCardPortrait
 @onready var character: Label = %CharacterLabel
-@onready var dialogue_label: Label = %DialogueLabel
+@onready var dialogue_label: RichTextLabel = %DialogueLabel
 @onready var choice_left_container: Control = %ChoiceLeftContainer
 @onready var choice_right_container: Control = %ChoiceRightContainer
 
@@ -39,7 +42,10 @@ func setup_card(data):
 	_cache_visual_baseline()
 	portrait.texture = data.portrait
 	_center_portrait_pivot()
-	dialogue_label.text = data.dialogue
+	
+	# Processa o texto para adicionar links de glossário
+	dialogue_label.text = Glossary.process_text(data.dialogue)
+	
 	choice_left_label.text = data.choice_left_text
 	choice_right_label.text = data.choice_right_text
 	character.text = data.character
@@ -52,6 +58,23 @@ func setup_card(data):
 	# Configura quais ícones devem aparecer para cada escolha
 	_setup_icons(choice_left_container, data.effects_left)
 	_setup_icons(choice_right_container, data.effects_right)
+	
+	if not dialogue_label.meta_clicked.is_connected(_on_meta_clicked):
+		dialogue_label.meta_clicked.connect(_on_meta_clicked)
+	if not dialogue_label.meta_hover_started.is_connected(_on_meta_hover_started):
+		dialogue_label.meta_hover_started.connect(_on_meta_hover_started)
+	if not dialogue_label.meta_hover_ended.is_connected(_on_meta_hover_ended):
+		dialogue_label.meta_hover_ended.connect(_on_meta_hover_ended)
+
+func _on_meta_clicked(meta):
+	glossary_requested.emit(str(meta))
+
+func _on_meta_hover_started(meta):
+	glossary_hover.emit(str(meta), true, get_global_mouse_position())
+
+func _on_meta_hover_ended(meta):
+	glossary_hover.emit(str(meta), false, Vector2.ZERO)
+
 
 # Função auxiliar para ligar/desligar ícones de status
 func _setup_icons(container: Control, effects: Dictionary):

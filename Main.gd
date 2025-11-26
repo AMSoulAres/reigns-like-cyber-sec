@@ -111,7 +111,12 @@ func draw_next_card():
 	if card_instance.has_method("play_draw_animation"):
 		card_instance.play_draw_animation()
 	card_instance.card_resolved.connect(_on_card_resolved)
+	if card_instance.has_signal("glossary_requested"):
+		card_instance.glossary_requested.connect(func(term): ui_layer.show_glossary(term))
+	if card_instance.has_signal("glossary_hover"):
+		card_instance.glossary_hover.connect(func(term, active, pos): ui_layer.handle_glossary_hover(term, active, pos))
 	card_instance.tree_exited.connect(draw_next_card)
+
 
 func _update_layout():
 	current_viewport_size = get_viewport().get_visible_rect().size

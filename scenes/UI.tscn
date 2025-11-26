@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ct8ms1o7pbr" path="res://assets/stats/MoralIcon.png" id="4_3wlde"]
 [ext_resource type="Texture2D" uid="uid://clxk5sn0wntu3" path="res://assets/stats/SecIcon.png" id="5_3wlde"]
 [ext_resource type="Texture2D" uid="uid://dykfmrf80tq1u" path="res://assets/stats/RepIcon.png" id="6_3wlde"]
+[ext_resource type="PackedScene" uid="uid://baggnnnhfdjw1" path="res://scenes/GlossaryPopup.tscn" id="7_glossary"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("2_3wlde")
@@ -137,3 +138,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Reputação"
 horizontal_alignment = 1
+
+[node name="GlossaryPopup" parent="." instance=ExtResource("7_glossary")]
+unique_name_in_owner = true
+visible = false
+

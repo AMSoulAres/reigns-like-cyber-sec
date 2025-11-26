@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var sec_fill: TextureProgressBar = %SecFill
 @onready var reputation_fill: TextureProgressBar = %RepFill
 @onready var root_container: Control = %HBoxContainer
+@onready var glossary_popup: Control = %GlossaryPopup
 
 var _active_tweens: Dictionary = {}
 var _color_tweens: Dictionary = {}
@@ -238,3 +239,11 @@ func _compute_ui_scale(viewport_size: Vector2) -> float:
 		return fallback_scale
 	var normalized_scale = card_scale / BASELINE_CARD_SCALE
 	return max(normalized_scale, 0.05)
+
+func show_glossary(term_key: String):
+	if glossary_popup and glossary_popup.has_method("show_term"):
+		glossary_popup.show_term(term_key, true) # Force show as modal on click
+
+func handle_glossary_hover(term_key: String, active: bool, pos: Vector2):
+	if glossary_popup and glossary_popup.has_method("handle_hover"):
+		glossary_popup.handle_hover(term_key, active, pos)

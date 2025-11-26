@@ -76,7 +76,7 @@ text = "Cachorrinho
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="DialogueLabel" type="Label" parent="Template"]
+[node name="DialogueLabel" type="RichTextLabel" parent="Template"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -90,12 +90,14 @@ offset_right = 232.5
 offset_bottom = 382.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("4_dqwud")
-theme_override_font_sizes/font_size = 18
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_dqwud")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
 text = "Sua reputação é tão imaculada que todos te consideram como um profeta. A empresa faliu, não pelo vazamento (que aconteceu), mas porque parou de vender produtos e começou a vender"
-vertical_alignment = 1
-autowrap_mode = 3
+fit_content = false
+scroll_active = false
+autowrap_mode = 2
 
 [node name="ChoiceLeftContainer" type="VBoxContainer" parent="Template"]
 unique_name_in_owner = true
