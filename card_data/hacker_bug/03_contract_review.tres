@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://hackerbug03contract"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://qovnn5njo52b"]
 
 [ext_resource type="Texture2D" uid="uid://bjxg7ra1fhsi1" path="res://assets/card_images/Hacker.png" id="1_portrait"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
@@ -17,12 +17,11 @@ choice_left_text = "Implemente todo o plano de seguranca."
 choice_right_text = "So faca o basico, o resto pode esperar."
 effects_left = {
 "money": -20,
-"sec": 12,
-"moral": 4
+"moral": 4,
+"sec": 12
 }
 effects_right = {
-"sec": -10,
-"reputation": -12
+"reputation": -12,
+"sec": -10
 }
-game_over_right = true
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

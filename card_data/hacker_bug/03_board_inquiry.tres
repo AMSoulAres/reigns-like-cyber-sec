@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://hackerbug03board"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ddo8c686r4lnh"]
 
 [ext_resource type="Texture2D" uid="uid://bjxg7ra1fhsi1" path="res://assets/card_images/Hacker.png" id="1_portrait"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
@@ -17,11 +17,10 @@ choice_left_text = "Criar forca-tarefa e indenizar os clientes."
 choice_right_text = "Aceitar a culpa e renunciar ao cargo."
 effects_left = {
 "money": -15,
-"reputation": -5,
-"moral": -3
+"moral": -3,
+"reputation": -5
 }
 effects_right = {
 "moral": 6
 }
-game_over_right = true
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

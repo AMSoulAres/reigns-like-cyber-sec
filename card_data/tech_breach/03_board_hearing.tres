@@ -22,5 +22,4 @@ effects_left = {
 effects_right = {
 "reputation": -20
 }
-game_over_right = true
 metadata/_custom_type_script = "uid://jt7uulivwsyb"
