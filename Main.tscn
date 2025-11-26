@@ -17,3 +17,4 @@ texture = ExtResource("3_b7knu")
 [node name="CardSpawnPoint" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("1_glv2v")]
+follow_viewport_enabled = true
