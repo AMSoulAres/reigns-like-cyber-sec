@@ -21,12 +21,18 @@ func show_term(term_key: String, modal: bool = false, pos: Vector2 = Vector2.ZER
 	description_label.text = data.get("definition", "")
 	
 	# Configure size constraints BEFORE waiting
+	var viewport_size = get_viewport_rect().size
+	
 	if modal:
 		panel.custom_minimum_size = Vector2.ZERO
 		panel.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		panel.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	else:
-		panel.custom_minimum_size = Vector2(300, 0)
+		# Dynamic width for mobile/small screens
+		# Use 300px or 90% of screen width, whichever is smaller
+		var target_width = min(300, viewport_size.x - 40) # 20px padding on each side
+		panel.custom_minimum_size = Vector2(target_width, 0)
+		
 		panel.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 		panel.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 
@@ -72,7 +78,6 @@ func show_term(term_key: String, modal: bool = false, pos: Vector2 = Vector2.ZER
 		var target_pos = pos - Vector2(panel.size.x * 0.5, offset_y)
 		
 		# Keep inside screen bounds
-		var viewport_size = get_viewport_rect().size
 		target_pos.x = clamp(target_pos.x, 10, viewport_size.x - panel.size.x - 10)
 		target_pos.y = clamp(target_pos.y, 10, viewport_size.y - panel.size.y - 10)
 		

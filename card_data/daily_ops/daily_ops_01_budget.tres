@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dailyops01"]
+
+[ext_resource type="Texture2D" uid="uid://ceo_img_uid" path="res://assets/card_images/DepartmentChief.png" id="1_ceo"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "daily_ops_01_budget"
+character = "CEO"
+portrait = ExtResource("1_ceo")
+dialogue = "Os acionistas estão pressionando por cortes. O orçamento de segurança cibernética está astronômico este ano."
+questline_id = "daily_ops"
+reshuffle_after_use = true
+available_from_start = true
+choice_left_text = "Cortar ferramentas de monitoramento caras."
+choice_right_text = "Reduzir a equipe de resposta a incidentes."
+effects_left = {
+"money": 15,
+"sec": -10,
+"reputation": 0
+}
+effects_right = {
+"money": 15,
+"sec": -10,
+"moral": -10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

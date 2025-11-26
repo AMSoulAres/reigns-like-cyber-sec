@@ -20,7 +20,25 @@ var terms = {
 	"vpn": {
 		"title": "VPN",
 		"definition": "Uma VPN (Rede Privada Virtual) estende uma rede privada através de uma rede pública e permite que os usuários enviem e recebam dados através de redes compartilhadas ou públicas como se seus dispositivos de computação estivessem diretamente conectados à rede privada."
+	},
+	"zero trust": {
+		"title": "Zero Trust",
+		"definition": "Zero Trust é um modelo de segurança cibernética que opera com o princípio de nunca confiar e sempre verificar, assumindo que ameaças podem vir de dentro ou fora da rede. Ele elimina a confiança implícita e exige verificação constante para cada solicitação de acesso"
+	},
+	"patch": {
+		"title": "Patch",
+		"definition": "Um patch é uma atualização que corrige falhas de segurança ou outros problemas em um software ou sistema, sem alterar suas funcionalidades."
+	},
+	"mfa": {
+		"title": "MFA",
+		"definition": "MFA (Multi-Factor Authentication) é um método de autenticação que requer mais de uma forma de verificação para confirmar a identidade de um usuário. Exigindo senha, código de verificação, biometria entre outros."
+	},
+	"dark web": {
+		"title": "Dark Web",
+		"definition": "A Dark Web é uma parte da Web que não é acessível pelos motores de busca e que requer protocolos de segurança para acessar. É um ambiente anônimo e potencialmente perigoso, onde ocorrem transações ilegais e atividades criminosas."
 	}
+	
+
 }
 
 func process_text(text: String) -> String:
@@ -43,7 +61,8 @@ func process_text(text: String) -> String:
 			var original_word = match_result.get_string()
 			
 			# Add styling: Bold, Yellow Color, Underline
-			var replacement = "[url=" + term + "][b][color=#FFD700][u]" + original_word + "[/u][/color][/b][/url]"
+			# We quote the URL parameter to handle spaces correctly (e.g. [url="zero trust"])
+			var replacement = "[url=\"" + term + "\"][b][color=#FFD700][u]" + original_word + "[/u][/color][/b][/url]"
 			processed_text = processed_text.left(start) + replacement + processed_text.right(-end)
 			
 	return processed_text

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ransomware02"]
+
+[ext_resource type="Texture2D" uid="uid://tech_girl_img_uid" path="res://assets/card_images/TechGirl.png" id="1_tech"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "ransomware_02_recovery"
+character = "Líder de TI"
+portrait = ExtResource("1_tech")
+dialogue = "O ataque parou, mas nossos servidores principais estão corrompidos. O backup mais recente é de 24 horas atrás."
+questline_id = "ransomware"
+reshuffle_after_use = false
+available_from_start = false
+choice_left_text = "Restaure o backup. Aceitamos a perda de dados."
+choice_right_text = "Tente recuperar os dados corrompidos manualmente."
+effects_left = {
+"money": -10,
+"sec": 10,
+"reputation": 5
+}
+effects_right = {
+"money": -15,
+"sec": 5,
+"reputation": -10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

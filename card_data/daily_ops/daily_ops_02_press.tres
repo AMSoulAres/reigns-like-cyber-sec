@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dailyops02"]
+
+[ext_resource type="Texture2D" uid="uid://news_img_uid" path="res://assets/card_images/News.png" id="1_news"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "daily_ops_02_press"
+character = "Repórter"
+portrait = ExtResource("1_news")
+dialogue = "Fontes anônimas afirmam que a CyberSec vende dados de usuários para terceiros. O que a empresa tem a dizer?"
+questline_id = "daily_ops"
+reshuffle_after_use = true
+available_from_start = true
+choice_left_text = "Negar categoricamente essas acusações absurdas."
+choice_right_text = "Sem comentários no momento."
+effects_left = {
+"reputation": 10,
+"moral": -5
+}
+effects_right = {
+"reputation": -15,
+"moral": 0
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

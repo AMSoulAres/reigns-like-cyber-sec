@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://socialeng01"]
+
+[ext_resource type="Texture2D" uid="uid://common_guy_img_uid" path="res://assets/card_images/CommonGuy.png" id="1_common"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "social_eng_01_call"
+character = "Funcionário"
+portrait = ExtResource("1_common")
+dialogue = "Recebi uma ligação do 'Suporte Técnico' pedindo minha senha para uma atualização urgente. O que devo fazer?"
+questline_id = "social_eng"
+reshuffle_after_use = false
+available_from_start = true
+choice_left_text = "Jamais compartilhe senhas! Denuncie o número."
+choice_right_text = "Se é urgente, passe a senha para ajudar."
+effects_left = {
+"sec": 5,
+"moral": 5,
+"reputation": 0
+}
+effects_right = {
+"sec": -20,
+"moral": -5,
+"reputation": -10
+}
+next_card_id_left = ""
+next_card_delay_left = 0
+next_card_id_right = "social_eng_02_breach"
+next_card_delay_right = 1
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

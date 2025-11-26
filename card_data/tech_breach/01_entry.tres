@@ -8,11 +8,11 @@ script = ExtResource("2_script")
 card_id = "tech_breach_01_entry"
 character = "Dev Pleno"
 portrait = ExtResource("1_by6fw")
-dialogue = "Chefe, meu usuario foi comprometido e dezenas de clientes tiveram dados expostos..."
+dialogue = "Chefe, meu usuário foi comprometido e dezenas de clientes tiveram dados expostos..."
 questline_id = "tech_breach"
 reshuffle_after_use = false
 choice_left_text = "Tranquilize o público e realize o treinamento de segurança da equipe."
-choice_right_text = "Voce caiu em phishing? Inacreditável. Vamos encobrir isso."
+choice_right_text = "Você caiu em phishing? Inacreditável. Vamos encobrir isso."
 effects_left = {
 "sec": 6,
 "moral": 6,
@@ -24,7 +24,7 @@ effects_right = {
 "reputation": -8
 }
 next_card_id_left = "tech_breach_02_training"
-next_card_delay_left = 1
+next_card_delay_left = 2
 next_card_id_right = "tech_breach_02_coverup"
-next_card_delay_right = 1
+next_card_delay_right = 4
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

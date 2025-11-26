@@ -8,13 +8,13 @@ script = ExtResource("2_script")
 card_id = "tech_breach_02_training"
 character = "Dev Pleno"
 portrait = ExtResource("1_fi2vd")
-dialogue = "A equipe esta esperando o novo treinamento anti-phishing. Como vamos conduzir isso?"
+dialogue = "A equipe está esperando o novo treinamento anti-phishing. Como vamos conduzir isso?"
 questline_id = "tech_breach"
 quest_step = 1
 available_from_start = false
 reshuffle_after_use = false
-choice_left_text = "Contrate especialistas e faca simulacoes reais."
-choice_right_text = "Eu monto um workshop rapido interno."
+choice_left_text = "Contrate especialistas e faça simulações reais."
+choice_right_text = "Eu monto um workshop rápido interno."
 effects_left = {
 "sec": 5,
 "money": -12,
