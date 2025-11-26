@@ -17,3 +17,4 @@ choice_left_text = "Acho que dá pra recuperar..."
 choice_right_text = "Estamos ferrados..."
 next_card_id_left = "game_over_sec_min_3"
 next_card_id_right = "game_over_sec_min_3"
+priority = 100

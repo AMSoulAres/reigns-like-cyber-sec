@@ -17,3 +17,4 @@ choice_left_text = "Não acredito que tenha um curso pra isso..."
 choice_right_text = "Não podemos confiar em ninguém!"
 next_card_id_left = "game_over_sec_max_3"
 next_card_id_right = "game_over_sec_max_3"
+priority = 100

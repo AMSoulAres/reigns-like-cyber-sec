@@ -16,3 +16,4 @@ choice_left_text = "Isso não é saudável..."
 choice_right_text = "A empresa é nossa família!"
 next_card_id_left = "game_over_moral_max_2"
 next_card_id_right = "game_over_moral_max_2"
+priority = 100

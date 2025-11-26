@@ -16,3 +16,4 @@ choice_left_text = "Que? É uma arquitetura normal..."
 choice_right_text = "Zero Trust é o futuro!"
 next_card_id_left = "game_over_rep_max_2"
 next_card_id_right = "game_over_rep_max_2"
+priority = 100

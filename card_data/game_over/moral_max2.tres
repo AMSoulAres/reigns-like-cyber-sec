@@ -17,3 +17,4 @@ choice_left_text = "Alguém pega o extintor!!"
 choice_right_text = "Vamos fazer uma roda de conversa para liberar essa energia!"
 next_card_id_left = "game_over_moral_max_3"
 next_card_id_right = "game_over_moral_max_3"
+priority = 100

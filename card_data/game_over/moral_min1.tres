@@ -16,3 +16,4 @@ choice_left_text = "Sim, senhor!"
 choice_right_text = "Faremos o possível!"
 next_card_id_left = "game_over_moral_min_2"
 next_card_id_right = "game_over_moral_min_2"
+priority = 100

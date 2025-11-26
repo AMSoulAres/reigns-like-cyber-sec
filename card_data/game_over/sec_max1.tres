@@ -16,3 +16,4 @@ choice_left_text = "Quem fez isso!?"
 choice_right_text = "Exagerei nas verificações..."
 next_card_id_left = "game_over_sec_max_2"
 next_card_id_right = "game_over_sec_max_2"
+priority = 100

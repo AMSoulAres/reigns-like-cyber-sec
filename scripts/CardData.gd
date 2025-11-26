@@ -32,3 +32,6 @@ class_name CardData
 @export_range(0, 10, 1, "or_greater") var next_card_delay_right: int = 0
 @export var game_over_right: bool = false
 @export var game_over_right_reason: String = ""
+
+@export_group("System")
+@export var priority: int = 0

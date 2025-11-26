@@ -8,6 +8,7 @@ const CardScene = preload("res://scenes/Card.tscn")
 @onready var card_spawn_point = $CardSpawnPoint
 @onready var ui_layer: Node = $UI
 
+@export var preloaded_deck: Array[CardData] = []
 var card_lookup: Dictionary = {}
 var draw_pile: Array = []
 var discard_pile: Array = []
@@ -34,7 +35,19 @@ func load_deck(path: String):
 	pending_cards.clear()
 	questline_state.clear()
 
-	_collect_cards(path.rstrip("/"))
+	if preloaded_deck.size() > 0:
+		print("Usando baralho pré-carregado (%d cartas)" % preloaded_deck.size())
+		preloaded_deck.shuffle()
+		for card in preloaded_deck:
+			if card:
+				card_lookup[card.card_id] = card
+				if card.available_from_start:
+					draw_pile.append(card)
+	else:
+		# Fallback para o método antigo de escanear pastas
+		print("Escaneando diretório: " + path)
+		_collect_cards(path.rstrip("/"))
+	
 	draw_pile.shuffle()
 
 func _collect_cards(path: String):
@@ -51,18 +64,25 @@ func _collect_cards(path: String):
 			continue
 
 		var full_path = path.path_join(entry)
+		
+		# Se for diretório, entra recursivamente
 		if dir.current_is_dir():
-			# Enter in subdirectory to find more cards (questlines, etc.)
 			_collect_cards(full_path)
-		elif entry.ends_with(".tres"):
-			var resource = load(full_path)
-			if resource is CardData:
-				var card: CardData = resource
-				card_lookup[card.card_id] = card
-				if card.available_from_start:
-					draw_pile.append(card)
-			else:
-				push_warning("Arquivo %s nao eh um CardData valido." % full_path)
+		else:
+			# Remove a extensão .remap se ela existir (build)
+			var filename_check = entry.trim_suffix(".remap")
+			
+			if filename_check.ends_with(".tres") or filename_check.ends_with(".res"):
+				var path_to_load = full_path.trim_suffix(".remap")
+				var resource = load(path_to_load)
+				if resource is CardData:
+					var card: CardData = resource
+					card_lookup[card.card_id] = card
+					if card.available_from_start:
+						draw_pile.append(card)
+				else:
+					pass
+					
 		entry = dir.get_next()
 	dir.list_dir_end()
 
@@ -147,18 +167,31 @@ func _pick_next_card() -> CardData:
 	return draw_pile.pop_back()
 
 func _consume_ready_pending_card() -> CardData:
-	var index = 0
-	while index < pending_cards.size():
-		var entry = pending_cards[index]
+	var best_candidate_index = -1
+	var highest_priority = -9999
+	
+	for i in range(pending_cards.size()):
+		var entry = pending_cards[i]
+		
+		# Só considera cartas que já cumpriram o delay (remaining <= 0)
 		if entry.get("remaining", 0) <= 0:
-			pending_cards.remove_at(index)
-			var card_id: String = entry.get("card_id", "")
-			if card_lookup.has(card_id):
-				return card_lookup[card_id]
-			else:
-				push_warning("Carta agendada %s nao encontrada." % card_id)
-				continue
-		index += 1
+			var entry_priority = entry.get("priority", 0)
+
+			if entry_priority > highest_priority:
+				highest_priority = entry_priority
+				best_candidate_index = i
+
+	if best_candidate_index != -1:
+		var entry = pending_cards[best_candidate_index]
+		pending_cards.remove_at(best_candidate_index)
+		
+		var card_id: String = entry.get("card_id", "")
+		if card_lookup.has(card_id):
+			return card_lookup[card_id]
+		else:
+			push_warning("Carta agendada %s nao encontrada." % card_id)
+			return _consume_ready_pending_card()
+			
 	return null
 
 func _on_card_resolved(card_data: CardData, choice: String):
@@ -204,15 +237,19 @@ func _schedule_follow_up(card_id: String, delay: int, questline_id: String):
 	if not card_lookup.has(card_id):
 		push_warning("Proxima carta %s nao encontrada." % card_id)
 		return
+
+	var target_card: CardData = card_lookup[card_id]
+	
 	var entry = {
 		"card_id": card_id,
 		"remaining": max(delay, 0),
-		"questline_id": questline_id
+		"questline_id": questline_id,
+		"priority": target_card.priority
 	}
 	pending_cards.append(entry)
 	if questline_id != "":
 		var future_card: CardData = card_lookup[card_id]
-		var state = questline_state.get(questline_id, {"status": "idle", "step": -1})
+		var state = questline_state.get(questline_id, {"status": "idle", "step": - 1})
 		state["status"] = "active"
 		state["step"] = future_card.quest_step
 		questline_state[questline_id] = state
@@ -279,9 +316,10 @@ func _on_game_over_sequence_requested(card_id: String, reason: String):
 	var entry = {
 		"card_id": card_id,
 		"remaining": 0,
-		"questline_id": questline_id
+		"questline_id": questline_id,
+		"priority": 9999
 	}
-	pending_cards.insert(0, entry)
+	pending_cards.append(entry)
 	if questline_id != "":
 		var state = questline_state.get(questline_id, {"status": "idle", "step": card.quest_step})
 		state["status"] = "active"

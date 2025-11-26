@@ -17,3 +17,4 @@ choice_left_text = "O mundo?"
 choice_right_text = "E meu trabalho?"
 next_card_id_left = "game_over_rep_max_3"
 next_card_id_right = "game_over_rep_max_3"
+priority = 100

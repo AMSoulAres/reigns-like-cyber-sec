@@ -16,3 +16,4 @@ choice_left_text = "O estagiário pediu mais um servidor desses?"
 choice_right_text = "Temos que comemorar!"
 next_card_id_left = "game_over_money_max_2"
 next_card_id_right = "game_over_money_max_2"
+priority = 100

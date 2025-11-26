@@ -17,3 +17,4 @@ choice_left_text = "Meu Deus..."
 choice_right_text = "O que vou fazer agora?"
 next_card_id_left = "game_over_moral_min_3"
 next_card_id_right = "game_over_moral_min_3"
+priority = 100
