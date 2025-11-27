@@ -6,22 +6,22 @@
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_01_entry"
-character = "Dev Pleno"
+character = "Chefe de TI"
 portrait = ExtResource("1_by6fw")
-dialogue = "Chefe, meu usuário foi comprometido e dezenas de clientes tiveram dados expostos..."
+dialogue = "Detectamos uma movimentação suspeita nos servidores. Parece que uma credencial vazou há semanas."
 questline_id = "tech_breach"
 reshuffle_after_use = false
-choice_left_text = "Tranquilize o público e realize o treinamento de segurança da equipe."
-choice_right_text = "Você caiu em phishing? Inacreditável. Vamos encobrir isso."
+choice_left_text = "Isole os servidores e inicie a resposta a incidentes imediatamente."
+choice_right_text = "Monitore silenciosamente para tentar rastrear a origem, mantendo o acesso."
 effects_left = {
-"sec": 6,
-"moral": 6,
-"reputation": -6
+"moral": 10,
+"reputation": 10,
+"sec": 15
 }
 effects_right = {
-"sec": -6,
-"moral": -6,
-"reputation": -8
+"moral": -10,
+"reputation": -10,
+"sec": -15
 }
 next_card_id_left = "tech_breach_02_training"
 next_card_delay_left = 2

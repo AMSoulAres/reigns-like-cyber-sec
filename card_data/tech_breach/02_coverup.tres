@@ -6,22 +6,24 @@
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_02_coverup"
-character = "Dev Pleno"
+character = "Chefe de TI"
 portrait = ExtResource("1_tcn1n")
-dialogue = "A auditoria interna descobriu que escondemos o incidente. Ainda dá para controlar a narrativa?"
+dialogue = "O vazamento anterior chegou à imprensa. Os acionistas estão furiosos e exigem uma explicação sobre por que não reportamos antes."
 questline_id = "tech_breach"
 quest_step = 1
 available_from_start = false
 reshuffle_after_use = false
-choice_left_text = "Confesse antes que vazem prints."
-choice_right_text = "Apague os logs e jure que nunca aconteceu."
+choice_left_text = "Assuma a falha publicamente e apresente o plano de contenção."
+choice_right_text = "Negue a gravidade e diga que foi apenas um teste de rotina mal interpretado."
 effects_left = {
-"moral": -4,
-"reputation": -12
+"money": -10,
+"moral": 10,
+"reputation": -10
 }
 effects_right = {
-"sec": -8,
-"reputation": -18
+"moral": -15,
+"reputation": -20,
+"sec": -10
 }
 next_card_id_left = "tech_breach_03_board_hearing"
 next_card_delay_left = 3

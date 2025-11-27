@@ -8,7 +8,7 @@ script = ExtResource("2_script")
 card_id = "ransomware_01_attack"
 character = "Hacker"
 portrait = ExtResource("1_hacker")
-dialogue = "Seus arquivos foram criptografados. Pague 50 BTC agora ou vazaremos todos os dados dos seus clientes na Dark Web."
+dialogue = "Seus arquivos foram criptografados em um ransomware. Pague 10 BTC agora ou vazaremos todos os dados dos seus clientes na Dark Web."
 questline_id = "ransomware"
 reshuffle_after_use = false
 available_from_start = true
@@ -17,11 +17,11 @@ choice_right_text = "Não negociamos com criminosos!"
 effects_left = {
 "money": -20,
 "sec": -5,
-"reputation": -10
+"reputation": 5
 }
 effects_right = {
-"money": -5,
-"sec": 5,
+"money": 0,
+"sec": -10,
 "reputation": 5
 }
 next_card_id_left = "ransomware_02_recovery"

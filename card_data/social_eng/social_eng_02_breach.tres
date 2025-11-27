@@ -17,7 +17,7 @@ choice_right_text = "Monitore o tráfego para rastrear a origem."
 effects_left = {
 "money": -15,
 "sec": 15,
-"reputation": -5
+"reputation": -10
 }
 effects_right = {
 "money": 0,

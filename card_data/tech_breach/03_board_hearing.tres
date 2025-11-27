@@ -6,20 +6,23 @@
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_03_board_hearing"
-character = "Dev Pleno"
+character = "Chefe de Departamento"
 portrait = ExtResource("1_pfkt1")
-dialogue = "O conselho abriu uma audiencia. Eles querem saber por que ninguem foi avisado do incidente."
+dialogue = "O conselho de administração convocou uma reunião de emergência. Eles estão questionando sua capacidade de liderar a segurança da empresa."
 questline_id = "tech_breach"
 quest_step = 3
 available_from_start = false
 reshuffle_after_use = false
-choice_left_text = "Confesse tudo e proponha um plano transparente."
-choice_right_text = "Minta sob juramento, ninguem precisa saber."
+choice_left_text = "Apresente os dados de melhoria e peça voto de confiança."
+choice_right_text = "Desvie a culpa para o fornecedor de software terceirizado."
 effects_left = {
-"moral": 4,
-"reputation": -5
+"moral": 10,
+"reputation": 15,
+"sec": 10
 }
 effects_right = {
-"reputation": -20
+"moral": -20,
+"reputation": -15,
+"sec": -5
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

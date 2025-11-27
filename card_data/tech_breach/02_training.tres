@@ -6,23 +6,25 @@
 [resource]
 script = ExtResource("2_script")
 card_id = "tech_breach_02_training"
-character = "Dev Pleno"
+character = "Chefe de TI"
 portrait = ExtResource("1_fi2vd")
-dialogue = "A equipe está esperando o novo treinamento anti-phishing. Como vamos conduzir isso?"
+dialogue = "Após o incidente, a moral da equipe técnica está baixa e todos temem ser os próximos a cair em um golpe."
 questline_id = "tech_breach"
 quest_step = 1
 available_from_start = false
 reshuffle_after_use = false
-choice_left_text = "Contrate especialistas e faça simulações reais."
-choice_right_text = "Eu monto um workshop rápido interno."
+choice_left_text = "Invista pesado em um programa de conscientização de segurança."
+choice_right_text = "Implemente políticas de bloqueio agressivas e restrinja acessos externos."
 effects_left = {
-"sec": 5,
-"money": -12,
-"moral": 5
+"money": -15,
+"moral": 15,
+"sec": 15,
+"reputation": 10
 }
 effects_right = {
-"sec": 3,
-"moral": 3
+"moral": -10,
+"sec": 10,
+"reputation": -10
 }
 next_card_id_left = "tech_breach_03_audit"
 next_card_delay_left = 2

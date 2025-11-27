@@ -17,11 +17,11 @@ choice_right_text = "Tente recuperar os dados corrompidos manualmente."
 effects_left = {
 "money": -10,
 "sec": 10,
-"reputation": 5
+"reputation": -10
 }
 effects_right = {
-"money": -15,
+"money": -20,
 "sec": 5,
-"reputation": -10
+"reputation": 5
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

@@ -15,14 +15,13 @@ available_from_start = true
 choice_left_text = "Jamais compartilhe senhas! Denuncie o número."
 choice_right_text = "Se é urgente, passe a senha para ajudar."
 effects_left = {
-"sec": 5,
-"moral": 5,
+"sec": 10,
+"moral": 10,
 "reputation": 0
 }
 effects_right = {
 "sec": -20,
-"moral": -5,
-"reputation": -10
+"moral": -10,
 }
 next_card_id_left = ""
 next_card_delay_left = 0

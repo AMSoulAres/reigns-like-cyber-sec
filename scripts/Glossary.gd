@@ -28,7 +28,7 @@ var terms = {
 	"patch": {
 		"title": "Patch",
 		"definition": "Um patch é uma atualização que corrige falhas de segurança ou outros problemas em um software ou sistema, sem alterar suas funcionalidades."
-	},
+		},
 	"mfa": {
 		"title": "MFA",
 		"definition": "MFA (Multi-Factor Authentication) é um método de autenticação que requer mais de uma forma de verificação para confirmar a identidade de um usuário. Exigindo senha, código de verificação, biometria entre outros."
@@ -36,6 +36,14 @@ var terms = {
 	"dark web": {
 		"title": "Dark Web",
 		"definition": "A Dark Web é uma parte da Web que não é acessível pelos motores de busca e que requer protocolos de segurança para acessar. É um ambiente anônimo e potencialmente perigoso, onde ocorrem transações ilegais e atividades criminosas."
+	},
+	"patches": {
+		"title": "Patches",
+		"definition": "Patches são atualizações que corrigem falhas de segurança ou outros problemas em um software ou sistema, sem alterar suas funcionalidades."
+	},
+	"backup": {
+		"title": "Backup",
+		"definition": "Backup é a cópia de segurança de dados, arquivos ou sistemas para que possam ser restaurados em caso de perda, corrupção ou falha."
 	}
 	
 
