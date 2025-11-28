@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://tut01welcome"]
+
+[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_common"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "tut_04"
+character = "Instrutor"
+portrait = ExtResource("1_common")
+dialogue = "Os status da empresa são: Dinheiro, Engajamento (Moral da Equipe), Segurança e Reputação da Empresa. Cada uma de suas escolhas afetará os status da empresa. Deslize para esquerda ou direita para ver o que acontece."
+questline_id = "tutorial"
+reshuffle_after_use = false
+available_from_start = true
+choice_left_text = "Essa escolha afetará dinheiro e engajamento. Note que o dinheiro subirá e a moral cairá."
+choice_right_text = "Essa escolha afetará segurança e reputação. Note que a segurança cairá e a reputação subirá."
+effects_left = {
+"money": 25,
+"moral": -25
+}
+effects_right = {
+"security": -25,
+"reputation": 25
+}
+next_card_id_left = "tut_05"
+next_card_id_right = "tut_05"

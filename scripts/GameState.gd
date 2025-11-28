@@ -3,6 +3,8 @@ extends Node
 const MIN_STAT = 0
 const MAX_STAT = 100
 
+var tutorial_active: bool = false
+
 var _money: int = 50
 var money: int:
 	get:
@@ -93,14 +95,14 @@ func apply_effects(effects: Dictionary):
 	check_game_over_conditions()
 	
 func check_game_over_conditions():
-	_maybe_queue_sequence("money_min", money <= MIN_STAT)
-	_maybe_queue_sequence("money_max", money >= MAX_STAT)
-	_maybe_queue_sequence("moral_min", moral <= MIN_STAT)
-	_maybe_queue_sequence("moral_max", moral >= MAX_STAT)
-	_maybe_queue_sequence("sec_min", sec <= MIN_STAT)
-	_maybe_queue_sequence("sec_max", sec >= MAX_STAT)
-	_maybe_queue_sequence("reputation_min", reputation <= MIN_STAT)
-	_maybe_queue_sequence("reputation_max", reputation >= MAX_STAT)
+	if _maybe_queue_sequence("money_min", money <= MIN_STAT): return
+	if _maybe_queue_sequence("money_max", money >= MAX_STAT): return
+	if _maybe_queue_sequence("moral_min", moral <= MIN_STAT): return
+	if _maybe_queue_sequence("moral_max", moral >= MAX_STAT): return
+	if _maybe_queue_sequence("sec_min", sec <= MIN_STAT): return
+	if _maybe_queue_sequence("sec_max", sec >= MAX_STAT): return
+	if _maybe_queue_sequence("reputation_min", reputation <= MIN_STAT): return
+	if _maybe_queue_sequence("reputation_max", reputation >= MAX_STAT): return
 
 func trigger_game_over(message: String = ""):
 	if message != "":
@@ -128,11 +130,11 @@ func emit_stats_changed():
 	}
 	emit_signal("stats_changed", stats)
 
-func _maybe_queue_sequence(key: String, condition: bool):
+func _maybe_queue_sequence(key: String, condition: bool) -> bool:
 	if not condition:
-		return
+		return false
 	if _sequence_triggered.get(key, false):
-		return
+		return false
 	var info: Dictionary = GAME_OVER_SEQUENCES.get(key, {})
 	var card_id: String = info.get("card_id", "")
 	var reason: String = info.get("reason", "")
@@ -143,6 +145,7 @@ func _maybe_queue_sequence(key: String, condition: bool):
 		trigger_game_over(reason)
 	else:
 		emit_signal("game_over_sequence_requested", card_id, reason)
+	return true
 
 func _reset_sequences():
 	_sequence_triggered.clear()

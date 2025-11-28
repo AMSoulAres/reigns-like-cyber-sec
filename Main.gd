@@ -22,7 +22,13 @@ func _ready():
 	GameState.game_over_sequence_requested.connect(_on_game_over_sequence_requested)
 	get_viewport().size_changed.connect(_on_viewport_size_changed)
 	_update_layout()
-	load_deck("res://card_data/")
+	
+	if GameState.tutorial_active:
+		print("Modo Tutorial Ativado")
+		load_deck("res://tutorial_data/")
+	else:
+		load_deck("res://card_data/")
+		
 	draw_next_card()
 
 func _on_viewport_size_changed():
@@ -48,6 +54,9 @@ func load_deck(path: String):
 		print("Escaneando diretório: " + path)
 		_collect_cards(path.rstrip("/"))
 	
+	if GameState.tutorial_active:
+		draw_pile.reverse()
+		return
 	draw_pile.shuffle()
 
 func _collect_cards(path: String):
@@ -224,6 +233,10 @@ func _on_card_resolved(card_data: CardData, choice: String):
 
 	_advance_pending_delays()
 
+	if next_id == "EXIT_TO_MENU":
+		call_deferred("_return_to_menu")
+		return
+
 	if next_id != "":
 		_schedule_follow_up(next_id, next_delay, card_data.questline_id)
 
@@ -235,6 +248,12 @@ func _on_card_resolved(card_data: CardData, choice: String):
 		if reason == "":
 			reason = "%s: a escolha '%s' encerrou a jornada." % [card_data.character, choice]
 		GameState.trigger_game_over(reason)
+
+func _return_to_menu():
+	game_has_ended = true
+	if not is_instance_valid(get_tree()):
+		return
+	get_tree().change_scene_to_file("res://scenes/StartScreen.tscn")
 
 func _schedule_follow_up(card_id: String, delay: int, questline_id: String):
 	if card_id == "":

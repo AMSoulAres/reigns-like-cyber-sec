@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://tut01welcome"]
+
+[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_common"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "tut_01"
+character = "Instrutor"
+portrait = ExtResource("1_common")
+dialogue = "Olá! Bem-vindo à CyberSec. Aqui suas escolhas definem o futuro da segurança da empresa. Experimente arrastar a carta para ver o que acontece."
+questline_id = "tutorial"
+reshuffle_after_use = false
+available_from_start = true
+choice_left_text = "Opa, aparece um texto!"
+choice_right_text = "Epa, aparece um texto!"
+next_card_id_left = "tut_02"
+next_card_id_right = "tut_02"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bqoc80cwytqtb"]
+
+[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_common"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "tut_07"
+character = "Instrutor"
+portrait = ExtResource("1_common")
+dialogue = "Quando um termo técnico aparecer, ele será destacado e ao clicar ou passar o mouse por cima, será explicado. Teste o termo firewall."
+questline_id = "tutorial"
+reshuffle_after_use = false
+choice_left_text = "Firewall... interessante!"
+choice_right_text = "Sabe muito"
+next_card_id_left = "tut_08"
+next_card_id_right = "tut_08"
