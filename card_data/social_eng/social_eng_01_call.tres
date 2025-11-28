@@ -17,7 +17,6 @@ choice_right_text = "Se é urgente, passe a senha para ajudar."
 effects_left = {
 "sec": 10,
 "moral": 10,
-"reputation": 0
 }
 effects_right = {
 "sec": -20,

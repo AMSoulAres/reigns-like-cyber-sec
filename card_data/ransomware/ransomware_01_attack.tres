@@ -20,7 +20,6 @@ effects_left = {
 "reputation": 5
 }
 effects_right = {
-"money": 0,
 "sec": -10,
 "reputation": 5
 }
