@@ -37,35 +37,35 @@ var last_game_over_reason: String = ""
 
 const GAME_OVER_SEQUENCES = {
 	"money_min": {
-		"card_id": "game_over_money_min_1",
+		"card_id": "game_over_money_min_0",
 		"reason": "Os cofres secaram."
 	},
 	"money_max": {
-		"card_id": "game_over_money_max_1",
+		"card_id": "game_over_money_max_0",
 		"reason": "A tesouraria saiu do controle."
 	},
 	"moral_min": {
-		"card_id": "game_over_moral_min_1",
+		"card_id": "game_over_moral_min_0",
 		"reason": "O engajamento da equipe despencou."
 	},
 	"moral_max": {
-		"card_id": "game_over_moral_max_1",
+		"card_id": "game_over_moral_max_0",
 		"reason": "O engajamento da equipe saiu do controle."
 	},
 	"sec_min": {
-		"card_id": "game_over_sec_min_1",
+		"card_id": "game_over_sec_min_0",
 		"reason": "A defesa cibernetica colapsou."
 	},
 	"sec_max": {
-		"card_id": "game_over_sec_max_1",
+		"card_id": "game_over_sec_max_0",
 		"reason": "A defesa cibernetica travou a operacao."
 	},
 	"reputation_min": {
-		"card_id": "game_over_rep_min_1",
+		"card_id": "game_over_rep_min_0",
 		"reason": "A reputacao da empresa afundou."
 	},
 	"reputation_max": {
-		"card_id": "game_over_rep_max_1",
+		"card_id": "game_over_rep_max_0",
 		"reason": "A reputacao desmedida provocou caos."
 	}
 }
