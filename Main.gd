@@ -30,7 +30,7 @@ func _ready():
 	if GameState.tutorial_active:
 		print("Modo Tutorial Ativado")
 		load_deck("res://tutorial_data/")
-	if GameState.gallery_active:
+	elif GameState.gallery_active:
 		print("Modo Galeria Ativado")
 		load_deck("res://gallery_data/")
 	else:
