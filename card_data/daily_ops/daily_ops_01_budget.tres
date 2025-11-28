@@ -9,7 +9,6 @@ card_id = "daily_ops_01_budget"
 character = "CEO"
 portrait = ExtResource("1_ceo")
 dialogue = "Os acionistas estão pressionando por cortes. O orçamento de segurança cibernética está astronômico este ano."
-questline_id = "daily_ops"
 reshuffle_after_use = true
 available_from_start = true
 choice_left_text = "Cortar ferramentas de monitoramento caras."

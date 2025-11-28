@@ -9,7 +9,6 @@ card_id = "daily_ops_02_press"
 character = "Repórter"
 portrait = ExtResource("1_news")
 dialogue = "Fontes anônimas afirmam que a CyberSec vende dados de usuários para terceiros. O que a empresa tem a dizer?"
-questline_id = "daily_ops"
 reshuffle_after_use = true
 available_from_start = true
 choice_left_text = "Negar categoricamente essas acusações absurdas."
