@@ -28,4 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/amsoulares/cyber-sec:0.5
+          tags: ghcr.io/amsoulares/cyber-sec:0.6

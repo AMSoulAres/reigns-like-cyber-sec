@@ -253,6 +253,10 @@ func _on_card_resolved(card_data: CardData, choice: String):
 	_advance_pending_delays()
 
 	if next_id == "EXIT_TO_MENU":
+		GameState.money = 50
+		GameState.sec = 50
+		GameState.moral = 50
+		GameState.reputation = 50
 		call_deferred("_return_to_menu")
 		return
 
