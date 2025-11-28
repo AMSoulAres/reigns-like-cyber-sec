@@ -44,6 +44,14 @@ var terms = {
 	"backup": {
 		"title": "Backup",
 		"definition": "Backup é a cópia de segurança de dados, arquivos ou sistemas para que possam ser restaurados em caso de perda, corrupção ou falha."
+	},
+	"logs": {
+		"title": "Logs",
+		"definition": "Logs são registros de eventos, operações ou transações que ocorrem em um sistema ou aplicativo. Eles são usados para monitorar, rastrear e analisar o funcionamento do sistema."
+	},
+	"log": {
+		"title": "Log",
+		"definition": "Log é um registro de eventos, operações ou transações que ocorrem em um sistema ou aplicativo. Eles são usados para monitorar, rastrear e analisar o funcionamento do sistema."
 	}
 	
 

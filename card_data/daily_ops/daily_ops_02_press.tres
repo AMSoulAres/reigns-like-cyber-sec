@@ -19,7 +19,6 @@ effects_left = {
 "moral": -5
 }
 effects_right = {
-"reputation": -15,
-"moral": 0
+"reputation": -15
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

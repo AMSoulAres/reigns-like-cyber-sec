@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bdfrt60o4d1eh"]
+
+[ext_resource type="Texture2D" uid="uid://da5weuv6gyuto" path="res://assets/card_images/sales_guy.png" id="1_uxrlf"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "sit_usb_01"
+character = "Gerente de Vendas"
+portrait = ExtResource("1_uxrlf")
+dialogue = "Achei um pen drive no estacionamento escrito 'Bônus da Diretoria'. Posso plugar pra ver de quem é?"
+questline_id = "usb_quest"
+reshuffle_after_use = false
+choice_left_text = "NÃO! Jogue isso num incinerador agora!"
+choice_right_text = "Dinheiro? Vamos ver agora!"
+effects_left = {
+"sec": 10
+}
+effects_right = {
+"sec": -15
+}
+next_card_id_right = "sit_usb_02"
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

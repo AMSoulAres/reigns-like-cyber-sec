@@ -16,8 +16,7 @@ choice_left_text = "Cortar ferramentas de monitoramento caras."
 choice_right_text = "Reduzir a equipe de resposta a incidentes."
 effects_left = {
 "money": 15,
-"sec": -10,
-"reputation": 0
+"sec": -10
 }
 effects_right = {
 "money": 15,

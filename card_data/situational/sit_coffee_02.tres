@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c17jp30e5kvy0"]
+
+[ext_resource type="Texture2D" uid="uid://dg515llyn5pk5" path="res://assets/card_images/TechGirl.png" id="1_tech"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "sit_coffee_02"
+character = "Paranóico com segurança"
+portrait = ExtResource("1_tech")
+dialogue = "Senhor, a cafeteira está minerando Dogecoin e enviando pacotes para a Coreia do Norte. O café está ótimo, porém."
+questline_id = "coffee_quest"
+quest_step = 1
+reshuffle_after_use = false
+available_from_start = false
+choice_left_text = "Desligue essa máquina imediatamente!"
+choice_right_text = "Quanto estamos lucrando? Deixa rodar."
+effects_left = {
+"sec": 15,
+"moral": -10
+}
+effects_right = {
+"money": 20,
+"sec": -15,
+"reputation": -10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

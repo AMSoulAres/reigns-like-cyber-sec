@@ -18,13 +18,13 @@ choice_right_text = "Implemente políticas de bloqueio agressivas e restrinja ac
 effects_left = {
 "money": -15,
 "moral": 15,
-"sec": 15,
-"reputation": 10
+"reputation": 10,
+"sec": 15
 }
 effects_right = {
 "moral": -10,
-"sec": 10,
-"reputation": -10
+"reputation": -10,
+"sec": 10
 }
 next_card_id_left = "tech_breach_03_audit"
 next_card_delay_left = 2

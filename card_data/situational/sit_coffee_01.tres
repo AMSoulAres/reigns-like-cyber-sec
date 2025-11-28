@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c17jp30e5kvyy"]
+
+[ext_resource type="Texture2D" uid="uid://dg515llyn5pk5" path="res://assets/card_images/TechGirl.png" id="1_tech"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "sit_coffee_01"
+character = "Funcionário"
+portrait = ExtResource("1_tech")
+dialogue = "A nova cafeteira 'SmartBrew 3000' precisa de WiFi para liberar o café expresso premium. Liberamos o acesso?"
+questline_id = "coffee_quest"
+quest_step = 0
+reshuffle_after_use = false
+available_from_start = true
+choice_left_text = "Claro, café é combustível de código."
+choice_right_text = "Sem chance. Café coado é mais seguro."
+effects_left = {
+"moral": 15,
+"sec": -5
+}
+effects_right = {
+"moral": -10,
+"sec": 5
+}
+next_card_id_left = "sit_coffee_02"
+next_card_delay_left = 2
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

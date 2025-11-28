@@ -5,18 +5,19 @@
 
 [resource]
 script = ExtResource("1_h3jpb")
-card_id = "conselheira1"
-character = "Especialista em Sec"
+card_id = "daily_ops_01_update_license"
+character = "Especialista em Segurança"
 portrait = ExtResource("1_ultvn")
-dialogue = "Alguns de nossos servidores estao desatualizados. Investimos agora na renovacao de licencas?"
-choice_left_text = "Nao da, vamos apertar mais um trimestre."
+dialogue = "Alguns de nossos servidores estão desatualizados. Investimos agora na renovação de licenças?"
+choice_left_text = "Não dá, vamos apertar mais um trimestre."
 choice_right_text = "Atualize tudo antes que vire incidente."
 effects_left = {
-"sec": -8,
+"sec": -10,
 "moral": -5
 }
 effects_right = {
 "sec": 10,
-"money": -12
+"money": -15,
+"reputation": 10
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"
