@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://hiaggt2pcju5"]
+
+[ext_resource type="Texture2D" uid="uid://bfou55yf50qmw" path="res://assets/card_images/book.png" id="1_4fh8m"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_hgjw3"]
+
+[resource]
+script = ExtResource("2_hgjw3")
+card_id = "game_over_moral_max_2"
+character = "Narrador"
+portrait = ExtResource("1_4fh8m")
+dialogue = "O clima está positivamente tóxico. O servidor pegou fogo, mas a equipe aplaudiu o “espetáculo motivacional”. O objetivo do trimestre foi substituído por “ser feliz até doer”."
+questline_id = "game_over_moral_max"
+quest_step = 1
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Alguém pega o extintor!!"
+choice_right_text = "Vamos fazer uma roda de conversa para liberar essa energia!"
+next_card_id_left = "game_over_moral_max_3"
+next_card_id_right = "game_over_moral_max_3"
+priority = 100

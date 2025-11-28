@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dbapxbfiyb8n4"]
+
+[ext_resource type="Texture2D" uid="uid://bjk6e3mkhfvai" path="res://assets/card_images/DepartmentChief.png" id="1_eeyt8"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_moral_min_1"
+character = "CEO"
+portrait = ExtResource("1_eeyt8")
+dialogue = "Acabei de ser informado que os auditores anteciparam a reunião. Prepare a equipe e a documentação de incidentes de até 6 meses atrás. Para ontem!"
+questline_id = "game_over_moral_min"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Sim, senhor!"
+choice_right_text = "Faremos o possível!"
+next_card_id_left = "game_over_moral_min_2"
+next_card_id_right = "game_over_moral_min_2"
+priority = 100

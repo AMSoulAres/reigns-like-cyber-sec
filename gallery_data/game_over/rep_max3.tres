@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://h04otknqiqk5"]
+
+[ext_resource type="Texture2D" uid="uid://cx0mxpp7bmpfx" path="res://assets/card_images/final_rep_max.png" id="1_kd1k6"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_rep_max_3"
+character = "Narrador"
+portrait = ExtResource("1_kd1k6")
+dialogue = "Sua reputação é tão imaculada que o consideram um profeta. A empresa trocou todos seus produtos por sessões de \"Zen Zero-Trust\". Você pula fora"
+questline_id = "game_over_rep_max"
+quest_step = 2
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Melhor ir embora..."
+choice_right_text = "Chega. Hora de aposentar"
+game_over_left = true
+game_over_left_reason = "A empresa ficou famosa demais."
+game_over_right = true
+game_over_right_reason = "A empresa ficou famosa demais."
+priority = 100

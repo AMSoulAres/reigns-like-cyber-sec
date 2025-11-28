@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ovpfl28xexq"]
+
+[ext_resource type="Texture2D" uid="uid://bmjmh6r6nlfmk" path="res://assets/card_images/CardRepFinal.png" id="1_xigg5"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_rep_max_0"
+character = "Narrador"
+portrait = ExtResource("1_xigg5")
+dialogue = "A reputação atingiu o limite máximo!"
+questline_id = "game_over_rep_max"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Avançar"
+choice_right_text = "Avançar"
+next_card_id_left = "game_over_rep_max_1"
+next_card_id_right = "game_over_rep_max_1"
+priority = 100

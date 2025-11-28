@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cnuq0w818fnc5"]
+
+[ext_resource type="Texture2D" uid="uid://bfou55yf50qmw" path="res://assets/card_images/book.png" id="1_jjswo"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_sec_max_1"
+character = "Narrador"
+portrait = ExtResource("1_jjswo")
+dialogue = "Você tenta pegar café na copa, mas o MFA não permite seu acesso sem uma verificação adicional."
+questline_id = "game_over_sec_max"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Quem fez isso!?"
+choice_right_text = "Exagerei nas verificações..."
+next_card_id_left = "game_over_sec_max_2"
+next_card_id_right = "game_over_sec_max_2"
+priority = 100

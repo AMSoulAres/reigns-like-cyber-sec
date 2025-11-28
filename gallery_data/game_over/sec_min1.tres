@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://rvhbwf7bndia"]
+
+[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_b8ijw"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_sec_min_1"
+character = "Funcionário"
+portrait = ExtResource("1_b8ijw")
+dialogue = "Chefe, a decisão de adiar atualizações \"até semana que vem\" completou seu 11º mês. Falhas continuam abertas por \"falta de tempo\". Não acha que está na hora de rever essa política?"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Temos preocupações maiores! O produto tá atrasado."
+choice_right_text = "Com os investidores pressionando, não dá pra parar."
+next_card_id_left = "game_over_sec_min_2"
+next_card_id_right = "game_over_sec_min_2"
+priority = 100

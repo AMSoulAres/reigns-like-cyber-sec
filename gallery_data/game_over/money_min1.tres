@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://br0a3saqdeyni"]
+
+[ext_resource type="Texture2D" uid="uid://c0gouejhb2geb" path="res://assets/card_images/mail.png" id="1_inb13"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_money_min_1"
+character = "Novo Email"
+portrait = ExtResource("1_inb13")
+dialogue = "Boas notícias! Reduzimos os custos de 100% do orçamento de segurança. Nosso novo firewall é um pastor alemão 'Sargento' e o Detector de Intrusões é o porteiro 'Sr. Jenkins'."
+questline_id = "game_over_money_min"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Esse cachorro não morde, né?"
+choice_right_text = "Parece seguro o suficiente contra ameaças digitais..."
+next_card_id_left = "game_over_money_min_2"
+next_card_id_right = "game_over_money_min_2"
+priority = 100

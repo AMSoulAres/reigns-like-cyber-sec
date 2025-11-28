@@ -4,6 +4,7 @@ const MIN_STAT = 0
 const MAX_STAT = 100
 
 var tutorial_active: bool = false
+var gallery_active: bool = false
 
 var _money: int = 50
 var money: int:

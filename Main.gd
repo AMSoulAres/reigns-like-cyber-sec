@@ -30,6 +30,9 @@ func _ready():
 	if GameState.tutorial_active:
 		print("Modo Tutorial Ativado")
 		load_deck("res://tutorial_data/")
+	if GameState.gallery_active:
+		print("Modo Galeria Ativado")
+		load_deck("res://gallery_data/")
 	else:
 		load_deck("res://card_data/")
 		
@@ -61,6 +64,11 @@ func load_deck(path: String):
 	if GameState.tutorial_active:
 		draw_pile.reverse()
 		return
+
+	if GameState.gallery_active:
+		draw_pile.reverse()
+		return
+
 	draw_pile.shuffle()
 
 func _collect_cards(path: String):

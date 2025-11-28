@@ -7,8 +7,15 @@ func _ready():
 
 func _on_play_pressed():
 	GameState.tutorial_active = false
+	GameState.gallery_active = false
 	get_tree().change_scene_to_file("res://Main.tscn")
 
 func _on_tutorial_pressed():
 	GameState.tutorial_active = true
+	GameState.gallery_active = false
+	get_tree().change_scene_to_file("res://Main.tscn")
+
+func _on_gallery_pressed():
+	GameState.tutorial_active = false
+	GameState.gallery_active = true
 	get_tree().change_scene_to_file("res://Main.tscn")

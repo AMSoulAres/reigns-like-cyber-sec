@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bw5vpk1c0hbsu"]
+
+[ext_resource type="Texture2D" uid="uid://d2a5vaq12v1y8" path="res://assets/card_images/moral_min.png" id="1_ug0hk"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_moral_min_3"
+character = "Narrador"
+portrait = ExtResource("1_ug0hk")
+dialogue = "Demandas exaustivas e a constante pressão para cobrir incidentes e vazamentos levaram toda sua equipe a abandonar a empresa. Eles um food truck chamado \"Cyber Bites\"."
+questline_id = "game_over_moral_min"
+quest_step = 2
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Desastroso"
+choice_right_text = "Acho que vou fazer uma boquinha depois da reunião"
+game_over_left = true
+game_over_left_reason = "O engajamento da equipe despencou."
+game_over_right = true
+game_over_right_reason = "O engajamento da equipe despencou."
+priority = 100

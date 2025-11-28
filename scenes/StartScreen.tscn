@@ -58,5 +58,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "TUTORIAL"
 
+[node name="GalleryButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "GALERIA"
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/GalleryButton" to="." method="_on_gallery_pressed"]

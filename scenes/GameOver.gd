@@ -14,4 +14,8 @@ func _ready():
 
 func _on_restart_pressed():
 	GameState.reset_state()
-	get_tree().change_scene_to_file("res://Main.tscn")
+	GameState.money = 50
+	GameState.sec = 50
+	GameState.moral = 50
+	GameState.reputation = 50
+	get_tree().change_scene_to_file("res://scenes/StartScreen.tscn")

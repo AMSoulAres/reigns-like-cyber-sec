@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://b17pyo1y7c824"]
+
+[ext_resource type="Texture2D" uid="uid://c0gouejhb2geb" path="res://assets/card_images/mail.png" id="1_ngp80"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_sec_min_3"
+character = "Narrador"
+portrait = ExtResource("1_ngp80")
+dialogue = "O conselho encerra as operações alegando “fadiga digital irreversível”. Logo antes de ser demitido, você cai em um phishing que prometia um aumento salarial."
+questline_id = "game_over_sec_min"
+quest_step = 2
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Devia ter feito backup..."
+choice_right_text = "Devia ter feito backup..."
+game_over_left = true
+game_over_left_reason = "O sistema de segurança ficou obsoleto."
+game_over_right = true
+game_over_right_reason = "O sistema de segurança ficou obsoleto."
+priority = 100

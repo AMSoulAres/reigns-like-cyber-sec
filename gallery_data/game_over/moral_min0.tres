@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://byf80gojhyjr"]
+
+[ext_resource type="Texture2D" uid="uid://bcx6lfth3j5tx" path="res://assets/card_images/CardMoralFinal.png" id="1_vlmbh"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_moral_min_0"
+character = "Narrador"
+portrait = ExtResource("1_vlmbh")
+dialogue = "A moral atingiu o limite mínimo!"
+questline_id = "game_over_moral_min"
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Avançar"
+choice_right_text = "Avançar"
+next_card_id_left = "game_over_moral_min_1"
+next_card_id_right = "game_over_moral_min_1"
+priority = 100

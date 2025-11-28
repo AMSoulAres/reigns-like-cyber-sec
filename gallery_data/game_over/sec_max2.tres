@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://d207hr55qwl11"]
+
+[ext_resource type="Texture2D" uid="uid://6a6lik2q7cgp" path="res://assets/card_images/DataAnalyst.png" id="1_h7b5b"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "game_over_sec_max_2"
+character = "Desenvolvedor"
+portrait = ExtResource("1_h7b5b")
+dialogue = "Opa chefe, parece que o firewall está funcionando direitinho! Ninguém consegue acessar nada. O sistema está congestionado com verificações."
+questline_id = "game_over_sec_max"
+quest_step = 1
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Não acredito que tenha um curso pra resolver isso..."
+choice_right_text = "Certo! Não podemos confiar em ninguém!"
+next_card_id_left = "game_over_sec_max_3"
+next_card_id_right = "game_over_sec_max_3"
+priority = 100
