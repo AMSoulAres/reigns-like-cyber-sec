@@ -4,6 +4,7 @@ extends Node
 const CardScene = preload("res://scenes/Card.tscn")
 
 @onready var background: Sprite2D = $Background
+@onready var card_placeholder: Node2D = $CardPlaceholder
 @onready var card_container: Node2D = $CardContainer
 @onready var card_spawn_point = $CardSpawnPoint
 @onready var ui_layer: Node = $UI
@@ -17,9 +18,12 @@ var questline_state: Dictionary = {}
 var game_has_ended = false
 var current_viewport_size: Vector2 = Vector2.ZERO
 
+var input_locked: bool = false
+
 func _ready():
 	GameState.game_over.connect(_on_game_over)
 	GameState.game_over_sequence_requested.connect(_on_game_over_sequence_requested)
+	GameState.critical_warning.connect(_on_critical_warning)
 	get_viewport().size_changed.connect(_on_viewport_size_changed)
 	_update_layout()
 	
@@ -95,8 +99,12 @@ func _collect_cards(path: String):
 		entry = dir.get_next()
 	dir.list_dir_end()
 
+func _on_critical_warning(_stat, _val):
+	input_locked = true
+	# No need to spawn dummy card anymore, the CardPlaceholder is always visible behind.
+
 func draw_next_card():
-	if game_has_ended:
+	if game_has_ended or input_locked:
 		return
 
 	var next_card = _pick_next_card()
@@ -124,13 +132,24 @@ func draw_next_card():
 		card_instance.glossary_requested.connect(func(term): ui_layer.show_glossary(term))
 	if card_instance.has_signal("glossary_hover"):
 		card_instance.glossary_hover.connect(func(term, active, pos): ui_layer.handle_glossary_hover(term, active, pos))
-	card_instance.tree_exited.connect(draw_next_card)
+	card_instance.tree_exited.connect(draw_next_card, CONNECT_DEFERRED)
 
 
 func _update_layout():
 	current_viewport_size = get_viewport().get_visible_rect().size
 	card_spawn_point.position = current_viewport_size * 0.5
 	_update_background()
+	
+	# Update placeholder layout
+	if card_placeholder:
+		var template = card_placeholder.get_node_or_null("Template")
+		if template:
+			var base_size = template.texture.get_size() if template.texture else template.size
+			if base_size != Vector2.ZERO:
+				var scale_factor = current_viewport_size.y / base_size.y
+				card_placeholder.scale = Vector2.ONE * scale_factor
+				card_placeholder.position = card_spawn_point.position - (base_size * scale_factor * 0.5)
+
 	var first_card_size := Vector2.ZERO
 	for child in card_container.get_children():
 		if child.has_method("update_layout"):
@@ -349,3 +368,7 @@ func _on_game_over_sequence_requested(card_id: String, reason: String):
 		state["status"] = "active"
 		state["step"] = card.quest_step
 		questline_state[questline_id] = state
+	
+	# Resume game flow for the game over card
+	input_locked = false
+	draw_next_card()

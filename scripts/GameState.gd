@@ -76,6 +76,7 @@ var _sequence_triggered: Dictionary = {}
 signal stats_changed(stats_dict)
 signal game_over
 signal game_over_sequence_requested(card_id: String, reason: String)
+signal critical_warning(stat_name: String, value: int)
 
 func _ready():
 	_reset_sequences()
@@ -95,14 +96,14 @@ func apply_effects(effects: Dictionary):
 	check_game_over_conditions()
 	
 func check_game_over_conditions():
-	if _maybe_queue_sequence("money_min", money <= MIN_STAT): return
-	if _maybe_queue_sequence("money_max", money >= MAX_STAT): return
-	if _maybe_queue_sequence("moral_min", moral <= MIN_STAT): return
-	if _maybe_queue_sequence("moral_max", moral >= MAX_STAT): return
-	if _maybe_queue_sequence("sec_min", sec <= MIN_STAT): return
-	if _maybe_queue_sequence("sec_max", sec >= MAX_STAT): return
-	if _maybe_queue_sequence("reputation_min", reputation <= MIN_STAT): return
-	if _maybe_queue_sequence("reputation_max", reputation >= MAX_STAT): return
+	if _maybe_queue_sequence("money_min", money <= MIN_STAT, "money"): return
+	if _maybe_queue_sequence("money_max", money >= MAX_STAT, "money"): return
+	if _maybe_queue_sequence("moral_min", moral <= MIN_STAT, "moral"): return
+	if _maybe_queue_sequence("moral_max", moral >= MAX_STAT, "moral"): return
+	if _maybe_queue_sequence("sec_min", sec <= MIN_STAT, "sec"): return
+	if _maybe_queue_sequence("sec_max", sec >= MAX_STAT, "sec"): return
+	if _maybe_queue_sequence("reputation_min", reputation <= MIN_STAT, "reputation"): return
+	if _maybe_queue_sequence("reputation_max", reputation >= MAX_STAT, "reputation"): return
 
 func trigger_game_over(message: String = ""):
 	if message != "":
@@ -130,22 +131,32 @@ func emit_stats_changed():
 	}
 	emit_signal("stats_changed", stats)
 
-func _maybe_queue_sequence(key: String, condition: bool) -> bool:
+func _maybe_queue_sequence(key: String, condition: bool, stat_name: String = "") -> bool:
 	if not condition:
 		return false
 	if _sequence_triggered.get(key, false):
 		return false
+		
+	_sequence_triggered[key] = true
+	_execute_game_over_sequence(key, stat_name)
+	return true
+
+func _execute_game_over_sequence(key: String, stat_name: String):
+	# Emit warning and wait
+	if stat_name != "":
+		emit_signal("critical_warning", stat_name, 0)
+		await get_tree().create_timer(2.0).timeout
+	
 	var info: Dictionary = GAME_OVER_SEQUENCES.get(key, {})
 	var card_id: String = info.get("card_id", "")
 	var reason: String = info.get("reason", "")
-	_sequence_triggered[key] = true
+	
 	if reason != "":
 		last_game_over_reason = reason
 	if card_id == "":
 		trigger_game_over(reason)
 	else:
 		emit_signal("game_over_sequence_requested", card_id, reason)
-	return true
 
 func _reset_sequences():
 	_sequence_triggered.clear()

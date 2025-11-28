@@ -30,6 +30,7 @@ func _ready():
 	# Conecta o sinal 'stats_changed' do GameState à nossa função '_on_stats_changed'.
 	# Quando o GameState emitir o sinal, esta função será chamada automaticamente.
 	GameState.stats_changed.connect(_on_stats_changed)
+	GameState.critical_warning.connect(_on_critical_warning)
 	_register_fill(money_fill)
 	_register_fill(moral_fill)
 	_register_fill(sec_fill)
@@ -249,3 +250,30 @@ func show_glossary(term_key: String):
 func handle_glossary_hover(term_key: String, active: bool, pos: Vector2):
 	if glossary_popup and glossary_popup.has_method("handle_hover"):
 		glossary_popup.handle_hover(term_key, active, pos)
+
+func _on_critical_warning(stat_name: String, _value: int):
+	# 1. Shake Screen (Root Container)
+	var shake_tween = create_tween()
+	var original_pos = _base_container_pos
+	# Se _base_container_pos for zero, tenta pegar a atual
+	if original_pos == Vector2.ZERO and root_container:
+		original_pos = root_container.position
+		
+	for i in range(10):
+		var shake_offset = Vector2(randf_range(-10, 10), randf_range(-10, 10))
+		shake_tween.tween_property(root_container, "position", original_pos + shake_offset, 0.05)
+	shake_tween.tween_property(root_container, "position", original_pos, 0.05)
+	
+	# 2. Pulse the specific bar
+	var target_node: Control = null
+	match stat_name:
+		"money": target_node = money_fill
+		"moral": target_node = moral_fill
+		"sec": target_node = sec_fill
+		"reputation": target_node = reputation_fill
+		
+	if target_node:
+		var pulse_tween = create_tween()
+		pulse_tween.set_loops(4) # 2 seconds total approx
+		pulse_tween.tween_property(target_node, "modulate", Color.RED, 0.25)
+		pulse_tween.tween_property(target_node, "modulate", Color.WHITE, 0.25)

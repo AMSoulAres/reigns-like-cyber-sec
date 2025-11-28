@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddnbhknq4k5yy"]
+[gd_scene load_steps=4 format=3 uid="uid://dcwd503o65ip7"]
 
-[ext_resource type="Script" path="res://scripts/StartScreen.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://b33m7ya7tkgj0" path="res://scripts/StartScreen.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c6ie06dnm6awt" path="res://assets/DownCard.png" id="2_a0vbq"]
+[ext_resource type="FontFile" uid="uid://lmvo4exvgn8b" path="res://assets/ShareTech-Regular.ttf" id="3_nj7f0"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -35,10 +37,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="LogoPlaceholder" type="Label" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "LOGO AQUI"
+texture = ExtResource("2_a0vbq")
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nj7f0")
+theme_override_font_sizes/font_size = 59
+text = "CyberSec"
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]

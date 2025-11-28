@@ -52,6 +52,22 @@ var terms = {
 	"log": {
 		"title": "Log",
 		"definition": "Log é um registro de eventos, operações ou transações que ocorrem em um sistema ou aplicativo. Eles são usados para monitorar, rastrear e analisar o funcionamento do sistema."
+	},
+	"minerando": {
+		"title": "Minerando",
+		"definition": "Minerando é o processo de extração de dados de uma fonte externa para o sistema. No contexto de criptomoedas, minerar de criação de novos blocos na blockchain, \"gerando moedas\"."
+	},
+	"minerar": {
+		"title": "Minerando",
+		"definition": "Minerando é o processo de extração de dados de uma fonte externa para o sistema. No contexto de criptomoedas, minerar de criação de novos blocos na blockchain, \"gerando moedas\"."
+	},
+	"criptomoedas": {
+		"title": "Criptomoedas",
+		"definition": "Criptomoedas são moedas digitais que usam tecnologia blockchain para operar, sem a necessidade de uma autoridade central."
+	},
+	"criptomoeda": {
+		"title": "Criptomoeda",
+		"definition": "Criptomoeda é uma moeda digital que usam tecnologia blockchain para operar, sem a necessidade de uma autoridade central."
 	}
 	
 

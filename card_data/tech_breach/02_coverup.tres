@@ -27,5 +27,4 @@ effects_right = {
 }
 next_card_id_left = "tech_breach_03_board_hearing"
 next_card_delay_left = 3
-game_over_right = true
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

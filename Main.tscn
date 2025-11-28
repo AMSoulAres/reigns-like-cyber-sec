@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://sjjqiunoj0qe" path="res://scenes/UI.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://c2gstjbpcvabt" path="res://Main.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://dntfa7ousqnju" path="res://assets/Background.png" id="3_b7knu"]
+[ext_resource type="Texture2D" uid="uid://ddoou71fj6kgm" path="res://assets/card_images/Template Principalv3.png" id="4_template"]
+[ext_resource type="Texture2D" uid="uid://c6ie06dnm6awt" path="res://assets/DownCard.png" id="5_downcard"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uu6xs")
@@ -11,6 +13,29 @@ script = ExtResource("1_uu6xs")
 position = Vector2(947, 555)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_b7knu")
+
+[node name="CardPlaceholder" type="Node2D" parent="."]
+
+[node name="Template" type="TextureRect" parent="CardPlaceholder"]
+offset_right = 541.0
+offset_bottom = 843.0
+texture = ExtResource("4_template")
+
+[node name="DownCard" type="TextureRect" parent="CardPlaceholder/Template"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.5
+offset_top = -286.5
+offset_right = 149.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_downcard")
+expand_mode = 1
 
 [node name="CardContainer" type="Node2D" parent="."]
 

@@ -12,6 +12,8 @@ dialogue = "O pendrive era um ransonware. Todos os dados do seu computador foram
 questline_id = "usb_quest"
 choice_left_text = "Oops"
 choice_right_text = "Foi um erro comum!"
+available_from_start = false
+reshuffle_after_use = false
 effects_left = {
 "money": -5,
 "moral": -5

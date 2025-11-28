@@ -11,6 +11,7 @@ portrait = ExtResource("1_lfid8")
 dialogue = "Woof!! Testar fim de jogo por dinheiro alto?"
 questline_id = "tests"
 reshuffle_after_use = false
+available_from_start = false
 choice_left_text = "Ir para próxima carta"
 choice_right_text = "Maximizar o dinheiro da empresa."
 effects_right = {
