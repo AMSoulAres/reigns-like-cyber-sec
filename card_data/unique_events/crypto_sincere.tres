@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cryptosincere06"]
+
+[ext_resource type="Texture2D" uid="uid://bjxg7ra1fhsi1" path="res://assets/card_images/Hacker.png" id="1_hacker"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "crypto_sincere"
+character = "Analista de Segurança"
+portrait = ExtResource("1_hacker")
+dialogue = "A equipe publicou um tutorial interno de criptografia… mas, por engano, incluiu a chave privada real de um dos servidores. O documento foi baixado 87 vezes antes de sumirem com ele."
+questline_id = ""
+quest_step = 0
+available_from_start = true
+reshuffle_after_use = false
+choice_left_text = "Trocar todas as chaves imediatamente."
+choice_right_text = "Trocar vai nos custar... Avise-os sobre auditoria e siga em frente."
+effects_left = {
+"sec": 10,
+"money": -15
+}
+effects_right = {
+"sec": -20,
+"reputation": -10,
+"moral": -5
+}
+next_card_id_left = ""
+next_card_delay_left = 0
+game_over_left = false
+game_over_left_reason = ""
+next_card_id_right = ""
+next_card_delay_right = 0
+game_over_right = false
+game_over_right_reason = ""
+priority = 0
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

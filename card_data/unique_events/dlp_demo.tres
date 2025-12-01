@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dlpdemo1a"]
+
+[ext_resource type="Texture2D" uid="uid://heulwjqi3bn7" path="res://assets/card_images/Instrutor.png" id="1_xo6a7"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "dlp_demo"
+character = "Coordenador de Treinamento"
+portrait = ExtResource("1_xo6a7")
+dialogue = "Na demonstração do DLP, o instrutor mostrou \"exemplos reais de vazamento\". Infelizmente, eram documentos internos contendo contratos, dados de clientes e… a receita secreta do café da empresa."
+reshuffle_after_use = false
+choice_left_text = "Censurar os exemplos e iniciar resposta a incidente."
+choice_right_text = "Dizer que foi \"coincidência\" e seguir o treinamento."
+effects_left = {
+"money": -10,
+"reputation": -5,
+"sec": 5
+}
+effects_right = {
+"reputation": -10,
+"sec": -10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

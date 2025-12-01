@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ckqav2o1t6gah"]
+
+[ext_resource type="Texture2D" uid="uid://magoeffe76l3" path="res://assets/card_images/paranoid.png" id="1_paranoid"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "rbac_transparent"
+character = "O paranóico"
+portrait = ExtResource("1_paranoid")
+dialogue = "Uma mensagem mal categorizada acabou publicando no mural da empresa a lista completa de permissões de todos os funcionários. Descobriu-se que o estagiário tinha acesso de administrador."
+reshuffle_after_use = false
+choice_left_text = "Corrigir as permissões e restringir tudo."
+choice_right_text = "Manter como está e evitar o caos político."
+effects_left = {
+"moral": -10,
+"sec": 20
+}
+effects_right = {
+"moral": 10,
+"reputation": -5,
+"sec": -15
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

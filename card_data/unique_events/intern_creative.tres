@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ce8v68qduo7sq"]
+
+[ext_resource type="Texture2D" uid="uid://ttm3vxmymlsw" path="res://assets/card_images/Intern.png" id="1_vtduh"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "intern_creative"
+character = "Estagiário"
+portrait = ExtResource("1_vtduh")
+dialogue = "Eu fiz um chatbot interno para responder dúvidas de segurança, ele se mostrou bem eficiente e acredito que pode agilizar muito nossos processos. Mas acho que ele ganhou ‘personalidade’, ele começou a mandar notificações passivo-agressivas."
+questline_id = "intern_invention"
+reshuffle_after_use = false
+choice_left_text = "Desligar o chatbot imediatamente."
+choice_right_text = "Integrar o chatbot ao portal oficial de segurança."
+effects_left = {
+"sec": -10
+}
+effects_right = {
+"reputation": -5,
+"sec": 10
+}
+next_card_id_right = "intern_chatbot_consequence"
+next_card_delay_right = 1
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

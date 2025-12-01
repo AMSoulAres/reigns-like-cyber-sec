@@ -68,6 +68,38 @@ var terms = {
 	"criptomoeda": {
 		"title": "Criptomoeda",
 		"definition": "Criptomoeda é uma moeda digital que usam tecnologia blockchain para operar, sem a necessidade de uma autoridade central."
+	},
+	"chave privada": {
+		"title": "Chave Privada",
+		"definition": "Chave privada é um código único gerado na criptografia RSA para criptografar e descriptografar dados. Ela deve ser guardada em segurança e nunca compartilhada."
+	},
+	"chave publica": {
+		"title": "Chave Pública",
+		"definition": "Chave pública é um código único gerado na criptografia RSA para criptografar e descriptografar dados. Ela pode ser compartilhada livremente para todos que desejarem criptografar dados para você."
+	},
+	"dlp": {
+		"title": "DLP",
+		"definition": "DLP (Data Loss Prevention) é um sistema/estatégia de segurança que monitora e controla o fluxo de dados sensíveis em uma organização, prevendo e mitigando vazamentos de dados."
+	},
+	"arquitetura do sistema": {
+		"title": "Arquitetura do Sistema",
+		"definition": "Arquitetura do Sistema é a estrutura e design de um sistema, incluindo componentes, interações e fluxos de dados. Ela define como os componentes se comunicam e como os dados fluem entre eles."
+	},
+	"ip": {
+		"title": "IP",
+		"definition": "IP (Internet Protocol) é um endereço único que identifica um dispositivo na rede. Cada dispositivo na internet tem um endereço IP único e pode ser acessável por esse endereço"
+	},
+	"porta": {
+		"title": "Porta",
+		"definition": "Porta é um número que identifica um serviço ou aplicativo em um dispositivo na rede. Cada serviço ou aplicativo em um dispositivo tem uma ou mais portas para comunicação. Todo IP possui portas que podem ser abertas ou fechadas para comunicação."
+	},
+	"ips": {
+		"title": "IP",
+		"definition": "IP (Internet Protocol) é um endereço único que identifica um dispositivo na rede. Cada dispositivo na internet tem um endereço IP único e pode ser acessável por esse endereço"
+	},
+	"portas": {
+		"title": "Porta",
+		"definition": "Porta é um número que identifica um serviço ou aplicativo em um dispositivo na rede. Cada serviço ou aplicativo em um dispositivo tem uma ou mais portas para comunicação. Todo IP possui portas que podem ser abertas ou fechadas para comunicação."
 	}
 	
 
