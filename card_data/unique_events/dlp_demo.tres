@@ -14,11 +14,11 @@ choice_left_text = "Censurar os exemplos e iniciar resposta a incidente."
 choice_right_text = "Dizer que foi \"coincidência\" e seguir o treinamento."
 effects_left = {
 "money": -10,
-"reputation": -5,
+"reputation": 5,
 "sec": 5
 }
 effects_right = {
 "reputation": -10,
-"sec": -10
+"sec": -8
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

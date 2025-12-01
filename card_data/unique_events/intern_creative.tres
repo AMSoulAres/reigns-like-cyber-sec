@@ -17,8 +17,8 @@ effects_left = {
 "sec": -10
 }
 effects_right = {
-"reputation": -5,
-"sec": 10
+"reputation": 8,
+"sec": 7
 }
 next_card_id_right = "intern_chatbot_consequence"
 next_card_delay_right = 1

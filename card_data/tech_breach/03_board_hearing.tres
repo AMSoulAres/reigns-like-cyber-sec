@@ -16,8 +16,8 @@ reshuffle_after_use = false
 choice_left_text = "Apresente os dados de melhoria e peça voto de confiança."
 choice_right_text = "Desvie a culpa para o fornecedor de software terceirizado."
 effects_left = {
-"moral": 10,
-"reputation": 15,
+"moral": 12,
+"reputation": 18,
 "sec": 10
 }
 effects_right = {

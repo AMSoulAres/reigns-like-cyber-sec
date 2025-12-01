@@ -14,7 +14,7 @@ available_from_start = true
 choice_left_text = "Negar categoricamente essas acusações absurdas."
 choice_right_text = "Sem comentários no momento."
 effects_left = {
-"reputation": 10,
+"reputation": 13,
 "moral": -5
 }
 effects_right = {

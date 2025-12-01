@@ -17,7 +17,7 @@ choice_right_text = "Tente recuperar os dados corrompidos manualmente."
 effects_left = {
 "money": -10,
 "sec": 10,
-"reputation": -10
+"reputation": -5
 }
 effects_right = {
 "money": -20,

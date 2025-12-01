@@ -14,11 +14,11 @@ available_from_start = true
 choice_left_text = "Cortar ferramentas de monitoramento caras."
 choice_right_text = "Reduzir a equipe de resposta a incidentes."
 effects_left = {
-"money": 15,
+"money": 18,
 "sec": -10
 }
 effects_right = {
-"money": 15,
+"money": 16,
 "sec": -10,
 "moral": -10
 }

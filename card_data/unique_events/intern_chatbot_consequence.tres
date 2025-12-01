@@ -16,8 +16,8 @@ reshuffle_after_use = false
 choice_left_text = "Desativar o chatbot imediatamente. Isso foi um erro."
 choice_right_text = "Configurar filtros e manter funcionando."
 effects_left = {
-"moral": -10,
-"reputation": -15
+"moral": -8,
+"reputation": -10
 }
 effects_right = {
 "reputation": -5,

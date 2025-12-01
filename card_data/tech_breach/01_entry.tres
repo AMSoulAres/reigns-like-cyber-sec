@@ -14,14 +14,14 @@ reshuffle_after_use = false
 choice_left_text = "Isole os servidores e inicie a resposta a incidentes imediatamente."
 choice_right_text = "Monitore silenciosamente para tentar rastrear a origem, mantendo o acesso."
 effects_left = {
-"moral": 10,
-"reputation": 10,
-"sec": 15
+"moral": 12,
+"reputation": 13,
+"sec": 12
 }
 effects_right = {
 "moral": -10,
 "reputation": -10,
-"sec": -15
+"sec": -12
 }
 next_card_id_left = "tech_breach_02_training"
 next_card_delay_left = 2

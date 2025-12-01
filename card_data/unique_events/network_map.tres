@@ -14,12 +14,13 @@ choice_left_text = "Tirar o arquivo do ar e revisar acessos."
 choice_right_text = "Deixar, porque a equipe ‘finalmente entendeu a rede’."
 effects_left = {
 "money": -5,
-"moral": -5,
-"sec": 15
+"moral": 0,
+"sec": 12,
+"reputation": 10
 }
 effects_right = {
 "moral": 10,
 "reputation": -5,
-"sec": -20
+"sec": -15
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

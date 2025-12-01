@@ -14,11 +14,12 @@ choice_left_text = "Corrigir as permissões e restringir tudo."
 choice_right_text = "Manter como está e evitar o caos político."
 effects_left = {
 "moral": -10,
-"sec": 20
+"sec": 15,
+"reputation": 8
 }
 effects_right = {
 "moral": 10,
 "reputation": -5,
-"sec": -15
+"sec": -12
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

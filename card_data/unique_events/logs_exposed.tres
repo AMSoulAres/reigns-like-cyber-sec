@@ -13,13 +13,13 @@ reshuffle_after_use = false
 choice_left_text = "Tirar os logs de circulação e revisar o processo."
 choice_right_text = "Deixar os executivos verem tudo: total transparência."
 effects_left = {
-"moral": -5,
-"reputation": -5,
+"moral": 0,
+"reputation": 5,
 "sec": 10
 }
 effects_right = {
 "moral": 10,
 "reputation": -5,
-"sec": -10
+"sec": -8
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

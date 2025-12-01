@@ -19,7 +19,7 @@ effects_left = {
 "moral": 10,
 }
 effects_right = {
-"sec": -20,
+"sec": -15,
 "moral": -10,
 }
 next_card_id_left = ""

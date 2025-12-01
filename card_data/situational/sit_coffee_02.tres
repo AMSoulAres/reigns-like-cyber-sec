@@ -16,12 +16,13 @@ available_from_start = false
 choice_left_text = "Desligue essa máquina imediatamente!"
 choice_right_text = "Quanto estamos lucrando? Deixa rodar."
 effects_left = {
-"sec": 15,
+"sec": 10,
 "moral": -10
 }
 effects_right = {
 "money": 20,
-"sec": -15,
-"reputation": -10
+"sec": -10,
+"reputation": -10,
+"moral": -5
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

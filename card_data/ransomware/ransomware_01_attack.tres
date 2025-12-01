@@ -17,7 +17,7 @@ choice_right_text = "Não negociamos com criminosos!"
 effects_left = {
 "money": -20,
 "sec": -5,
-"reputation": 5
+"reputation": 8
 }
 effects_right = {
 "sec": -10,

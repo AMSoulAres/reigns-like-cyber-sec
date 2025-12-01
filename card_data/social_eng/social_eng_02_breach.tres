@@ -16,11 +16,9 @@ choice_left_text = "Cortar toda a conexão com a internet imediatamente!"
 choice_right_text = "Monitore o tráfego para rastrear a origem."
 effects_left = {
 "money": -15,
-"sec": 15,
-"reputation": -10
+"sec": 12
 }
 effects_right = {
-"money": 0,
 "sec": -10,
 "reputation": -20
 }

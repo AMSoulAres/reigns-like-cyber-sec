@@ -18,8 +18,8 @@ choice_right_text = "Implemente políticas de bloqueio agressivas e restrinja ac
 effects_left = {
 "money": -15,
 "moral": 15,
-"reputation": 10,
-"sec": 15
+"reputation": 15,
+"sec": 12
 }
 effects_right = {
 "moral": -10,

@@ -16,9 +16,9 @@ reshuffle_after_use = false
 choice_left_text = "Autorize o refazimento completo, parando novas funcionalidades por um mês."
 choice_right_text = "Aplique patches pequenos e mantenha o roadmap de produtos."
 effects_left = {
-"money": -20,
-"reputation": 10,
-"sec": 20
+"money": -18,
+"reputation": 15,
+"sec": 15
 }
 effects_right = {
 "money": 15,

@@ -17,10 +17,11 @@ choice_left_text = "Trocar todas as chaves imediatamente."
 choice_right_text = "Trocar vai nos custar... Avise-os sobre auditoria e siga em frente."
 effects_left = {
 "sec": 10,
-"money": -15
+"money": -12,
+"reputation": 10
 }
 effects_right = {
-"sec": -20,
+"sec": -15,
 "reputation": -10,
 "moral": -5
 }

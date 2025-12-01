@@ -16,7 +16,7 @@ reshuffle_after_use = false
 choice_left_text = "Permitir o tour."
 choice_right_text = "Proibir absolutamente tudo."
 effects_left = {
-"reputation": 15,
+"reputation": 18,
 "sec": -5,
 "moral": 5
 }
