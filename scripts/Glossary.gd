@@ -100,9 +100,11 @@ var terms = {
 	"portas": {
 		"title": "Porta",
 		"definition": "Porta é um número que identifica um serviço ou aplicativo em um dispositivo na rede. Cada serviço ou aplicativo em um dispositivo tem uma ou mais portas para comunicação. Todo IP possui portas que podem ser abertas ou fechadas para comunicação."
+	},
+	"BTC": {
+		"title": "BTC",
+		"definition": "BTC (Bitcoin) é a moeda digital mais popular e amplamente utilizada. Famosa por ser a primeira criptomoeda, baixa rastreabilidade e baixa volatilidade."
 	}
-	
-
 }
 
 func process_text(text: String) -> String:

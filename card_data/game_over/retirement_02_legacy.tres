@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dkf0y5s24wwh3"]
+
+[ext_resource type="Texture2D" uid="uid://dg515llyn5pk5" path="res://assets/card_images/TechGirl.png" id="1_tech"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "retirement_02_legacy"
+character = "Narrador"
+portrait = ExtResource("1_tech")
+dialogue = "Mas qual é seu legado? A história da sua gestão será contada de diferentes formas, dependendo das escolhas que você fez. Como você quer ser lembrado?"
+questline_id = "retirement"
+quest_step = 2
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "O Defensor: Segurança Acima de Tudo"
+choice_right_text = "O Pragmático: Equilíbrio Entre Negócio e Segurança"
+next_card_id_left = "retirement_03_defender"
+next_card_id_right = "retirement_03_pragmatic"
+next_card_delay_left = 2
+next_card_delay_right = 2
+priority = 100
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

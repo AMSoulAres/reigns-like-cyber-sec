@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://fut3n2rfrcq2"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://tut01welcome"]
 
 [ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_common"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
@@ -8,10 +8,12 @@ script = ExtResource("2_script")
 card_id = "tut_08"
 character = "Instrutor"
 portrait = ExtResource("1_common")
-dialogue = "Com isso, você agora deve saber tudo o que precisa para começar! Agora é hora de você começar a jogar ou ainda tem alguma dúvida?"
+dialogue = "O jogo é sobre Cyber Segurança. Para não ficar boiando nos diálogos com temas técnicos de TI, existe uma funcionalidade com um glossário que explica os termos técnicos. Na próxima carta eu te mostro."
 questline_id = "tutorial"
 reshuffle_after_use = false
-choice_left_text = "Perfeito! Vamos lá!"
-choice_right_text = "Pode repetir?"
-next_card_id_left = "EXIT_TO_MENU"
-next_card_id_right = "tut_01"
+available_from_start = true
+choice_left_text = "Ufa!"
+choice_right_text = "Aprender um pouco mais, né?"
+
+next_card_id_left = "tut_09"
+next_card_id_right = "tut_09"

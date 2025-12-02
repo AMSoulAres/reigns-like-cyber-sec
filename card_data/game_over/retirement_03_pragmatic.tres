@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c6q16ftk6hxa"]
+
+[ext_resource type="Texture2D" uid="uid://da5weuv6gyuto" path="res://assets/card_images/sales_guy.png" id="1_sales"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "retirement_03_pragmatic"
+character = "Gerente de Negócios"
+portrait = ExtResource("1_sales")
+dialogue = "Você nos mostrou que é possível inovar SEM sacrificar a segurança. A empresa cresceu 300% sob sua gestão, e ainda mantemos o padrão mais alto do setor. Seu legado: prova de que segurança e negócio prosperam juntos."
+questline_id = "retirement"
+quest_step = 3
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Ver a Empresa Prosperar"
+choice_right_text = "Ver a Empresa Prosperar"
+next_card_id_left = "retirement_04_ending_pragmatic"
+next_card_id_right = "retirement_04_ending_pragmatic"
+next_card_delay_left = 3
+next_card_delay_right = 3
+priority = 100
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

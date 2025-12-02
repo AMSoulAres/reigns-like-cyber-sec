@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://retirement00"]
+
+[ext_resource type="Texture2D" uid="uid://dg515llyn5pk5" path="res://assets/card_images/TechGirl.png" id="1_tech"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "retirement_00"
+character = "Gerente de RH"
+portrait = ExtResource("1_tech")
+dialogue = "Parabéns! Você completou 10 anos como Chefe de Segurança Cibernética. O conselho gostaria de oferecer uma aposentadoria honrosa com um grande reconhecimento do seu legado."
+questline_id = "retirement"
+quest_step = 0
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Aceitar a aposentadoria e reflexionar sobre os tempos."
+choice_right_text = "Finalmente livre! Hora de relaxar."
+next_card_id_left = "retirement_01_reflections"
+next_card_id_right = "retirement_01_reflections"
+next_card_delay_left = 2
+next_card_delay_right = 1
+priority = 100
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

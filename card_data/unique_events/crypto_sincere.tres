@@ -1,37 +1,25 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://cryptosincere06"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://j8h0xlekbhnl"]
 
-[ext_resource type="Texture2D" uid="uid://bjxg7ra1fhsi1" path="res://assets/card_images/Hacker.png" id="1_hacker"]
+[ext_resource type="Texture2D" uid="uid://3lpeanolabth" path="res://assets/card_images/Analista.png" id="1_00v6u"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "crypto_sincere"
 character = "Analista de Segurança"
-portrait = ExtResource("1_hacker")
+portrait = ExtResource("1_00v6u")
 dialogue = "A equipe publicou um tutorial interno de criptografia… mas, por engano, incluiu a chave privada real de um dos servidores. O documento foi baixado 87 vezes antes de sumirem com ele."
-questline_id = ""
-quest_step = 0
-available_from_start = true
 reshuffle_after_use = false
 choice_left_text = "Trocar todas as chaves imediatamente."
 choice_right_text = "Trocar vai nos custar... Avise-os sobre auditoria e siga em frente."
 effects_left = {
-"sec": 10,
 "money": -12,
-"reputation": 10
+"reputation": 10,
+"sec": 10
 }
 effects_right = {
-"sec": -15,
+"moral": -5,
 "reputation": -10,
-"moral": -5
+"sec": -15
 }
-next_card_id_left = ""
-next_card_delay_left = 0
-game_over_left = false
-game_over_left_reason = ""
-next_card_id_right = ""
-next_card_delay_right = 0
-game_over_right = false
-game_over_right_reason = ""
-priority = 0
 metadata/_custom_type_script = "uid://jt7uulivwsyb"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dkf0y5s24v3h2"]
+
+[ext_resource type="Texture2D" uid="uid://dg515llyn5pk5" path="res://assets/card_images/TechGirl.png" id="1_tech"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "retirement_01_reflections"
+character = "Você (Refletindo)"
+portrait = ExtResource("1_tech")
+dialogue = "Você senta em sua antiga cadeira e contempla a jornada. Dez anos de decisões difíceis, incidentes evitados, equipes treinadas. A empresa agora é um exemplo de segurança cibernética no setor."
+questline_id = "retirement"
+quest_step = 1
+available_from_start = false
+reshuffle_after_use = false
+choice_left_text = "Avançar para o Legado"
+choice_right_text = "Avançar para o Legado"
+next_card_id_left = "retirement_02_legacy"
+next_card_id_right = "retirement_02_legacy"
+next_card_delay_left = 3
+next_card_delay_right = 3
+priority = 100
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

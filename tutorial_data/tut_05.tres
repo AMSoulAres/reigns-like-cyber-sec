@@ -8,11 +8,11 @@ script = ExtResource("2_script")
 card_id = "tut_05"
 character = "Instrutor"
 portrait = ExtResource("1_common")
-dialogue = "Legal! Agora tem um peguinha... Você sabe quais dos status serão afetados, mas não sabe se será bom ou ruim. Você terá que experimentar e teorizar a situação para ver qual será o resultado."
+dialogue = "Legal! Mas tem uma pegadinha... Você sabe quais dos status serão afetados, mas não sabe se será bom ou ruim. Você terá que experimentar e teorizar a situação para ver qual será o resultado."
 questline_id = "tutorial"
 reshuffle_after_use = false
 available_from_start = true
-choice_left_text = "Não sei se isso é muito justo..."
+choice_left_text = "Hmmm, posso fazer ações ruins apenas para controlar os status da empresa?"
 choice_right_text = "Me basear no bom senso?"
 
 next_card_id_left = "tut_06"

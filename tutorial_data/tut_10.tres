@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://4fp3iojlkyc1"]
+
+[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_common"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "tut_10"
+character = "Instrutor"
+portrait = ExtResource("1_common")
+dialogue = "Com isso, você agora deve saber tudo o que precisa para começar! Agora é hora de você começar a jogar ou ainda tem alguma dúvida?"
+questline_id = "tutorial"
+reshuffle_after_use = false
+choice_left_text = "Perfeito! Vamos lá!"
+choice_right_text = "Pode repetir?"
+next_card_id_left = "EXIT_TO_MENU"
+next_card_id_right = "tut_01"
