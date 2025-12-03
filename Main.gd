@@ -121,6 +121,9 @@ func draw_next_card():
 		_on_game_over()
 		return
 
+	GameState.cards_played += 1
+	print("Cartas jogadas: %d/%d" % [GameState.cards_played, GameState.victory_threshold])
+
 	var card_instance = CardScene.instantiate()
 	card_container.add_child(card_instance)
 	card_instance.position = card_spawn_point.position
@@ -265,6 +268,7 @@ func _on_card_resolved(card_data: CardData, choice: String):
 		GameState.sec = 50
 		GameState.moral = 50
 		GameState.reputation = 50
+		GameState.cards_played = 0
 		call_deferred("_return_to_menu")
 		return
 
@@ -344,6 +348,7 @@ func _on_game_over():
 	if game_has_ended:
 		return
 	print("O jogo terminou. A mudar para a cena de Game Over.")
+	GameState.reset_state()
 	game_has_ended = true
 	call_deferred("_switch_to_game_over_scene")
 
@@ -368,6 +373,9 @@ func _on_game_over_sequence_requested(card_id: String, reason: String):
 	var card: CardData = card_lookup[card_id]
 	var questline_id = card.questline_id
 	_clear_pending_for_questline(questline_id, card_id)
+	pending_cards.clear()
+	draw_pile.clear()
+	discard_pile.clear()
 	var entry = {
 		"card_id": card_id,
 		"remaining": 0,
@@ -375,6 +383,7 @@ func _on_game_over_sequence_requested(card_id: String, reason: String):
 		"priority": 9999
 	}
 	pending_cards.append(entry)
+	draw_pile.append(card)
 	if questline_id != "":
 		var state = questline_state.get(questline_id, {"status": "idle", "step": card.quest_step})
 		state["status"] = "active"

@@ -35,6 +35,13 @@ var reputation: int:
 		_reputation = clamp(value, MIN_STAT, MAX_STAT)
 
 var last_game_over_reason: String = ""
+var _cards_played: int = 0
+var cards_played: int:
+	get:
+		return _cards_played
+	set(value):
+		_cards_played = value
+var victory_threshold: int = 30
 
 const GAME_OVER_SEQUENCES = {
 	"money_min": {
@@ -68,6 +75,10 @@ const GAME_OVER_SEQUENCES = {
 	"reputation_max": {
 		"card_id": "game_over_rep_max_0",
 		"reason": "A reputacao desmedida provocou caos."
+	},
+	"victory": {
+		"card_id": "retirement_00",
+		"reason": "Você completou sua jornada como Chefe de Segurança."
 	}
 }
 
@@ -105,6 +116,9 @@ func check_game_over_conditions():
 	if _maybe_queue_sequence("sec_max", sec >= MAX_STAT, "sec"): return
 	if _maybe_queue_sequence("reputation_min", reputation <= MIN_STAT, "reputation"): return
 	if _maybe_queue_sequence("reputation_max", reputation >= MAX_STAT, "reputation"): return
+	print("Cards played: %d/%d" % [cards_played, victory_threshold])
+	print(cards_played >= victory_threshold)
+	if _maybe_queue_sequence("victory", cards_played >= victory_threshold, "cards_played"): return
 
 func trigger_game_over(message: String = ""):
 	if message != "":
@@ -119,6 +133,7 @@ func reset_state():
 	sec = 50
 	moral = 50
 	reputation = 50
+	cards_played = 0
 	last_game_over_reason = ""
 	_reset_sequences()
 	emit_stats_changed()
@@ -144,7 +159,7 @@ func _maybe_queue_sequence(key: String, condition: bool, stat_name: String = "")
 
 func _execute_game_over_sequence(key: String, stat_name: String):
 	# Emit warning and wait
-	if stat_name != "":
+	if stat_name != "" and stat_name != "cards_played":
 		emit_signal("critical_warning", stat_name, 0)
 		await get_tree().create_timer(2.0).timeout
 	
