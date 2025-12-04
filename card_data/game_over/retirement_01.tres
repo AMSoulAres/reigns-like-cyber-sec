@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dkf0y5s24v3h2"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c2b8v8ppahkrr"]
 
-[ext_resource type="Texture2D" uid="uid://dg515llyn5pk5" path="res://assets/card_images/TechGirl.png" id="1_tech"]
+[ext_resource type="Texture2D" uid="uid://bfou55yf50qmw" path="res://assets/card_images/book.png" id="1_egdjf"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "retirement_01"
 character = "Você (Refletindo)"
-portrait = ExtResource("1_tech")
+portrait = ExtResource("1_egdjf")
 dialogue = "Você senta em sua antiga cadeira e contempla a jornada. Dez anos de decisões difíceis, incidentes evitados, equipes treinadas. A empresa agora é um exemplo de segurança cibernética no setor."
 questline_id = "retirement"
 quest_step = 1

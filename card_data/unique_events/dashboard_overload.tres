@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dashboard_overload_01"]
+
+[ext_resource type="Texture2D" uid="uid://3lpeanolabth" path="res://assets/card_images/Analista.png" id="1_analista"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "dashboard_overload"
+character = "Analista SOC"
+portrait = ExtResource("1_analista")
+dialogue = "O time criou 22 painéis de segurança. Ninguém sabe ao certo o que está sendo monitorado e cada um mostra um número diferente de incidentes."
+reshuffle_after_use = false
+choice_left_text = "Padronizar painéis e analisar agrupamentos de incidentes."
+choice_right_text = "Manter todos. Diversidade de visão!"
+effects_left = {
+"sec": 15,
+"moral": -5
+}
+effects_right = {
+"sec": -10,
+"moral": 10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

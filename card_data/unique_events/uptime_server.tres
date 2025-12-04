@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dxbq6ks7wk8lb"]
+
+[ext_resource type="Texture2D" uid="uid://3lpeanolabth" path="res://assets/card_images/Analista.png" id="1_analista"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "uptime_server"
+character = "Administradora de Sistemas"
+portrait = ExtResource("1_analista")
+dialogue = "Temos um servidor em produção com 4 anos de uptime e está consumindo todos nossos recursos. A equipe tem medo de reiniciar e ele nunca mais voltar."
+reshuffle_after_use = false
+choice_left_text = "Estudar sistema e aplicar correção."
+choice_right_text = "Deixar como está e rezar."
+effects_left = {
+"money": -10,
+"moral": 10,
+"sec": 10
+}
+effects_right = {
+"money": -15,
+"moral": -10,
+"sec": -10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

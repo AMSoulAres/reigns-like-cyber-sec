@@ -8,19 +8,16 @@ script = ExtResource("2_script")
 card_id = "network_map"
 character = "Arquiteta de Redes"
 portrait = ExtResource("1_tech")
-dialogue = "Alguém subiu na internet a arquitetura do sistema, com todas as rotas, IPs, portas e permissões. O documento está recebendo curtidas porque ‘é bonito’."
+dialogue = "Alguém subiu na internet a arquitetura do sistema, com todas as rotas e permissões. O design ficou lindo, mas agora hackers sabem exatamente onde estão nossos Firewalls e Bancos de Dados."
 reshuffle_after_use = false
 choice_left_text = "Tirar o arquivo do ar e revisar acessos."
-choice_right_text = "Deixar, porque a equipe ‘finalmente entendeu a rede’."
+choice_right_text = "Blefar e dizer que foram vazamentos falsos."
 effects_left = {
 "money": -5,
-"moral": 0,
 "sec": 12,
-"reputation": 10
+"reputation": -10
 }
 effects_right = {
-"moral": 10,
 "reputation": -5,
-"sec": -15
+"money": 10
 }
-metadata/_custom_type_script = "uid://jt7uulivwsyb"

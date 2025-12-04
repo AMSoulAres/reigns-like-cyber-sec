@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://boy4iut7xflfj"]
+
+[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_commonguy"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "leaked_test_email"
+character = "Colega de trabalho"
+portrait = ExtResource("1_commonguy")
+dialogue = "O cara novo rodou um script de teste de carga apontando para a base real de clientes. 50 mil clientes receberam e-mails com 'Testando 123'."
+reshuffle_after_use = false
+choice_left_text = "Emitir nota oficial explicando todo o nosso erro e reforce o treinamento do time."
+choice_right_text = "Dizer que foi um ataque hacker e seguir em frente. Precisamos economizar."
+effects_left = {
+"money": -5,
+"moral": 10,
+"reputation": -5,
+"sec": 10
+}
+effects_right = {
+"money": 10,
+"moral": -5,
+"reputation": -10,
+"sec": -5
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c6q16ftl6hxa"]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dncvv6jbkdnn2"]
 
-[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_guy"]
+[ext_resource type="Texture2D" uid="uid://bfou55yf50qmw" path="res://assets/card_images/book.png" id="1_gvnus"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "retirement_02"
 character = "Você (Na Aposentadoria)"
-portrait = ExtResource("1_guy")
+portrait = ExtResource("1_gvnus")
 dialogue = "Você deixa a empresa em excelente posição. Crescimento exponencial. Equipe motivada e bem paga. Segurança como diferencial competitivo, não como obstáculo. O mercado reconhece sua liderança: a empresa passa a ser benchmark para inovação segura."
 questline_id = "retirement"
 quest_step = 2

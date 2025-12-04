@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dxm17tu6nymim"]
 
-[ext_resource type="Texture2D" uid="uid://c0wf4yl03ux76" path="res://assets/card_images/CommonGuy.png" id="1_xygex"]
+[ext_resource type="Texture2D" uid="uid://bs5urexpcnrce" path="res://assets/card_images/angry_old.png" id="1_xygex"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]

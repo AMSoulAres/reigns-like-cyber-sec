@@ -55,11 +55,11 @@ var terms = {
 	},
 	"minerando": {
 		"title": "Minerando",
-		"definition": "Minerando é o processo de extração de dados de uma fonte externa para o sistema. No contexto de criptomoedas, minerar de criação de novos blocos na blockchain, \"gerando moedas\"."
+		"definition": "Minerar é o processo de extração de dados de uma fonte externa para o sistema. No contexto de criptomoedas, é criação de novos blocos na blockchain, \"gerando moedas\"."
 	},
 	"minerar": {
-		"title": "Minerando",
-		"definition": "Minerando é o processo de extração de dados de uma fonte externa para o sistema. No contexto de criptomoedas, minerar de criação de novos blocos na blockchain, \"gerando moedas\"."
+		"title": "Minerar",
+		"definition": "Minerar é o processo de extração de dados de uma fonte externa para o sistema. No contexto de criptomoedas, é criação de novos blocos na blockchain, \"gerando moedas\"."
 	},
 	"criptomoedas": {
 		"title": "Criptomoedas",
@@ -101,7 +101,7 @@ var terms = {
 		"title": "Porta",
 		"definition": "Porta é um número que identifica um serviço ou aplicativo em um dispositivo na rede. Cada serviço ou aplicativo em um dispositivo tem uma ou mais portas para comunicação. Todo IP possui portas que podem ser abertas ou fechadas para comunicação."
 	},
-	"BTC": {
+	"btc": {
 		"title": "BTC",
 		"definition": "BTC (Bitcoin) é a moeda digital mais popular e amplamente utilizada. Famosa por ser a primeira criptomoeda, baixa rastreabilidade e baixa volatilidade."
 	}

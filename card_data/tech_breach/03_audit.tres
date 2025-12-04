@@ -8,13 +8,13 @@ script = ExtResource("2_script")
 card_id = "tech_breach_03_audit"
 character = "Chefe de Departamento"
 portrait = ExtResource("1_foivh")
-dialogue = "A auditoria concluiu a análise. Temos vulnerabilidades críticas que exigem refazimento total de dois sistemas principais."
+dialogue = "A auditoria concluiu a análise. Temos vulnerabilidades críticas que exigem que dois sistemas sejam reescritos do zero."
 questline_id = "tech_breach"
 quest_step = 2
 available_from_start = false
 reshuffle_after_use = false
-choice_left_text = "Autorize o refazimento completo, parando novas funcionalidades por um mês."
-choice_right_text = "Aplique patches pequenos e mantenha o roadmap de produtos."
+choice_left_text = "Autorize o desenvolvimento completo, parando novas funcionalidades por um mês."
+choice_right_text = "Aplique atualizações pequenas e mantenha o planejamento de lançamentos."
 effects_left = {
 "money": -18,
 "reputation": 15,

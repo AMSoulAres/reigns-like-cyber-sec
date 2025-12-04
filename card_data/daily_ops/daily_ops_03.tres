@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bini8jgfijoxv"]
+
+[ext_resource type="Texture2D" uid="uid://bjk6e3mkhfvai" path="res://assets/card_images/DepartmentChief.png" id="1_font6"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="1_h3jpb"]
+
+[resource]
+script = ExtResource("1_h3jpb")
+card_id = "daily_ops_03"
+character = "CEO"
+portrait = ExtResource("1_font6")
+dialogue = "Nossas ações estão se refletindo no desempenho. Aumentarei o investimento no seu setor!"
+choice_left_text = "Agradeço imensamente. Investiremos na infraestrutura de segurança."
+choice_right_text = "Ótimo! Podemos organizar uma festa de fim de ano agora!"
+effects_left = {
+"money": 15,
+"sec": 10
+}
+effects_right = {
+"money": 15,
+"moral": 10
+}

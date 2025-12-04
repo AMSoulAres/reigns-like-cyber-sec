@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://vpn_disconnect_01"]
+
+[ext_resource type="Texture2D" uid="uid://b82255000000" path="res://assets/card_images/TechGirl.png" id="1_techgirl"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "vpn_disconnect"
+character = "Equipe de TI"
+portrait = ExtResource("1_techgirl")
+dialogue = "A VPN está desconectando os funcionários a cada 10 minutos. Alguns desativaram o agente de segurança para acessar sistemas externos sem lentidão."
+reshuffle_after_use = false
+choice_left_text = "Investir em nova infraestrutura de VPN."
+choice_right_text = "Impor bloqueios para quem usar fora da VPN."
+effects_left = {
+"money": -15,
+"sec": 20,
+"moral": 10
+}
+effects_right = {
+"sec": 10,
+"moral": -10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

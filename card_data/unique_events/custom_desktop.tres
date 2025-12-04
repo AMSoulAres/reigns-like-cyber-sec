@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://custom_desktop_01"]
+
+[ext_resource type="Texture2D" uid="uid://d84477000000" path="res://assets/card_images/DepartmentChief.png" id="1_deptchief"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "custom_desktop"
+character = "Chefe de Departamento"
+portrait = ExtResource("1_deptchief")
+dialogue = "A nova funcionalidade trouxe muita atenção e investimentos para a empresa! Vamos dobrar a meta para novas funcionalidades antes do fim do ano!"
+reshuffle_after_use = false
+choice_left_text = "Senhor, já estamos meio apertados…"
+choice_right_text = "Prolongar carga horária, já!"
+effects_left = {
+"money": 20,
+"moral": 5,
+"reputation": 10
+}
+effects_right = {
+"money": 20,
+"moral": -10,
+"reputation": 10
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

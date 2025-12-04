@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bqppb8yfru2le"]
+
+[ext_resource type="Texture2D" uid="uid://eoaq3txo1i1" path="res://assets/card_images/worker.png" id="1_3kc0o"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "forbidden_software"
+character = "Contratado do Suporte"
+portrait = ExtResource("1_3kc0o")
+dialogue = "Vários funcionários instalaram um software \"milagroso\" de produtividade vindo de um site duvidoso. Aparentemente, ele pede acesso à câmera para \"analisar seu foco\"."
+reshuffle_after_use = false
+choice_left_text = "Remover software imediatamente."
+choice_right_text = "Esse tal de hiperfoco pode fazer milagres"
+effects_left = {
+"moral": -10,
+"sec": 10
+}
+effects_right = {
+"moral": 5,
+"sec": -5
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

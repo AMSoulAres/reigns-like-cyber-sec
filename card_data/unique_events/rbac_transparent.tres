@@ -10,7 +10,7 @@ character = "O paranóico"
 portrait = ExtResource("1_paranoid")
 dialogue = "Um post mal categorizado acabou publicando no mural da empresa a lista completa de permissões de todos os funcionários. Descobriu-se que o estagiário tinha acesso de administrador."
 reshuffle_after_use = false
-choice_left_text = "Corrigir as permissões e restringir tudo."
+choice_left_text = "Restringir acesso do estagiário e reavaliar políticas de segurança de todos."
 choice_right_text = "Manter como está e evitar o caos político."
 effects_left = {
 "moral": -10,

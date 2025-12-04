@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c24jofitxg3sn"]
+
+[ext_resource type="Texture2D" uid="uid://eoaq3txo1i1" path="res://assets/card_images/worker.png" id="1_kkjcw"]
+[ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+card_id = "forever_temp_pass"
+character = "Equipe de Suporte"
+portrait = ExtResource("1_kkjcw")
+dialogue = "Um funcionário ficou três anos usando a senha temporária \"BemVindo123\". Ele achava que trocar era \"só sugestão\"."
+reshuffle_after_use = false
+choice_left_text = "Obrigar troca de senha imediatamente."
+choice_right_text = "Implementar expiração automática agressiva."
+effects_left = {
+"moral": -5,
+"sec": 15
+}
+effects_right = {
+"moral": -10,
+"sec": 20
+}
+metadata/_custom_type_script = "uid://jt7uulivwsyb"

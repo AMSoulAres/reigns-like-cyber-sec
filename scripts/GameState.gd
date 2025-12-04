@@ -41,7 +41,7 @@ var cards_played: int:
 		return _cards_played
 	set(value):
 		_cards_played = value
-var victory_threshold: int = 30
+var victory_threshold: int = 25
 
 const GAME_OVER_SEQUENCES = {
 	"money_min": {

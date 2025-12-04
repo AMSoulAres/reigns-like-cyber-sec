@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://socialeng02"]
 
-[ext_resource type="Texture2D" uid="uid://sec_chief_img_uid" path="res://assets/card_images/DepartmentChief.png" id="1_chief"]
+[ext_resource type="Texture2D" uid="uid://c4nfdpl14mh5m" path="res://assets/card_images/serious_man.png" id="1_imogx"]
 [ext_resource type="Script" uid="uid://jt7uulivwsyb" path="res://scripts/CardData.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 card_id = "social_eng_02_breach"
 character = "Chefe de Segurança"
-portrait = ExtResource("1_chief")
+portrait = ExtResource("1_imogx")
 dialogue = "Detectamos acesso não autorizado usando as credenciais daquele funcionário! Estão roubando dados agora mesmo!"
 questline_id = "social_eng"
-reshuffle_after_use = false
 available_from_start = false
+reshuffle_after_use = false
 choice_left_text = "Cortar toda a conexão com a internet imediatamente!"
 choice_right_text = "Monitore o tráfego para rastrear a origem."
 effects_left = {
@@ -19,7 +19,7 @@ effects_left = {
 "sec": 12
 }
 effects_right = {
-"sec": -10,
-"reputation": -20
+"reputation": -20,
+"sec": -10
 }
 metadata/_custom_type_script = "uid://jt7uulivwsyb"
