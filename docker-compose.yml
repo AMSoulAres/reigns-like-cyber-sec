@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   cyber-sec:
-    image: ghcr.io/amsoulares/cyber-sec:1.0.0
+    image: ghcr.io/amsoulares/cyber-sec:1.0.1
     container_name: cyber-sec
     restart: unless-stopped
     networks:
